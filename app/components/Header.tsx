@@ -12,8 +12,8 @@ export default function Header() {
              <div className="absolute w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-b-[20px] border-accent-gold animate-pulse"></div>
           </div>
           <div className="flex flex-col">
-            <span className="text-xs md:text-sm text-foreground/70 font-semibold tracking-wider">รอยัล คาสิโน ออนไลน์</span>
-            <span className="text-base md:text-xl text-accent-gold font-bold uppercase tracking-widest drop-shadow-md">Royal Online</span>
+            <span className="text-xs md:text-sm text-foreground/70 font-semibold tracking-wider">themeKiku คาสิโน ออนไลน์</span>
+            <span className="text-base md:text-xl text-accent-gold font-bold tracking-widest drop-shadow-md">themeKiku Online</span>
           </div>
         </div>
 

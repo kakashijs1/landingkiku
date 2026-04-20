@@ -28,7 +28,7 @@ export default function Hero() {
           <div className="relative w-64 md:w-80 h-24 mb-4">
             <div className="absolute inset-0 flex items-center justify-center">
               <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-accent-gold to-yellow-600 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] filter">
-                Royal G-Club
+                themeKiku G-Club
               </h1>
             </div>
           </div>

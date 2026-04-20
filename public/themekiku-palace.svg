@@ -1,0 +1,63 @@
+<svg width="1200" height="820" viewBox="0 0 1200 820" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky" x1="600" y1="32" x2="600" y2="790" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3A1D1C"/>
+      <stop offset=".45" stop-color="#1B1519"/>
+      <stop offset="1" stop-color="#100D11"/>
+    </linearGradient>
+    <linearGradient id="wall" x1="324" y1="220" x2="890" y2="768" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F5E6CD"/>
+      <stop offset=".55" stop-color="#D7C0A0"/>
+      <stop offset="1" stop-color="#AB8A62"/>
+    </linearGradient>
+    <linearGradient id="roof" x1="363" y1="157" x2="860" y2="327" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F1C76A"/>
+      <stop offset="1" stop-color="#AA6D22"/>
+    </linearGradient>
+    <linearGradient id="window" x1="551" y1="326" x2="551" y2="649" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE19F"/>
+      <stop offset="1" stop-color="#6F4324"/>
+    </linearGradient>
+    <radialGradient id="fire" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(246 140) rotate(90) scale(120 120)">
+      <stop stop-color="#FFD58F"/>
+      <stop offset=".5" stop-color="#F47C5A" stop-opacity=".72"/>
+      <stop offset="1" stop-color="#F47C5A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="fire2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(880 109) rotate(90) scale(110 110)">
+      <stop stop-color="#FFF0A8"/>
+      <stop offset=".52" stop-color="#5CB6FF" stop-opacity=".65"/>
+      <stop offset="1" stop-color="#5CB6FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="820" fill="url(#sky)"/>
+  <ellipse cx="224" cy="157" rx="120" ry="120" fill="url(#fire)"/>
+  <ellipse cx="874" cy="120" rx="110" ry="110" fill="url(#fire2)"/>
+
+  <path d="M270 287h659v421H270z" fill="url(#wall)"/>
+  <path d="M344 215h512v87H344z" fill="url(#roof)"/>
+  <path d="M322 249h553l26 54H296l26-54Z" fill="#D1A14B"/>
+
+  <path d="M401 190h80v113h-80zM715 190h80v113h-80z" fill="#F0DDBE"/>
+  <path d="M420 122h44v76h-44zM731 122h44v76h-44z" fill="#C18A31"/>
+  <path d="M437 90h9v32h-9zM748 90h9v32h-9z" stroke="#F3C96E" stroke-width="8" stroke-linecap="round"/>
+  <path d="M386 300h427v312H386z" fill="#E7D0AE"/>
+
+  <path d="M541 294h117v325H541z" fill="#D7B57F"/>
+  <path d="M557 317c0-47 19-71 58-71 38 0 57 24 57 71v302H557V317Z" fill="url(#window)"/>
+  <path d="M575 342h82v180h-82z" fill="#6E4125"/>
+  <path d="M597 541h37v78h-37z" fill="#5A321D"/>
+
+  <path d="M416 360h90v176h-90zM694 360h90v176h-90z" fill="#FFF0D7"/>
+  <path d="M435 383h52v118h-52zM713 383h52v118h-52z" fill="#8B5737"/>
+  <path d="M416 565h90v102h-90zM694 565h90v102h-90z" fill="#FFF0D7"/>
+  <path d="M435 585h52v63h-52zM713 585h52v63h-52z" fill="#8B5737"/>
+
+  <path d="M300 300h44v408h-44zM856 300h44v408h-44z" fill="#C9AA79"/>
+  <path d="M286 281h72v30h-72zM842 281h72v30h-72z" fill="#F2D29A"/>
+
+  <path d="M232 710h742v48H232z" fill="#22181C"/>
+  <rect x="430" y="641" width="340" height="44" rx="22" fill="#7B1123"/>
+  <path d="M462 663h274" stroke="#F4D286" stroke-width="4" stroke-linecap="round"/>
+  <text x="600" y="672" text-anchor="middle" fill="#F7D48C" font-size="42" font-family="Georgia, serif">themeKiku G-club</text>
+</svg>
