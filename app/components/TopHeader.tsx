@@ -15,76 +15,85 @@ const navItems: NavItem[] = [
   { id: "fish", label: "ยิงปลา", icon: "fish" },
   { id: "lottery", label: "ลอตเตอรี่", icon: "lottery" },
   { id: "sports", label: "กีฬา", icon: "sports" },
-  { id: "cards", label: "ไพ่", icon: "cards" },
   { id: "esports", label: "อีสปอร์ต", icon: "esports" },
+  { id: "cards", label: "ไพ่", icon: "cards" },
   { id: "news", label: "ข่าวกิจกรรม", icon: "news" },
 ];
 
 export default function TopHeader() {
-  const [isMobileExpanded, setIsMobileExpanded] = useState(true);
+  const [isMobileExpanded, setIsMobileExpanded] = useState(false);
   const mobilePanelId = useId();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/8 bg-[linear-gradient(180deg,rgba(13,11,16,0.96),rgba(13,11,16,0.88))] backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-accent-gold/10 bg-[#100d11]/92 backdrop-blur-xl">
       <div className="mx-auto max-w-[1400px] px-3 py-3 sm:px-6 sm:py-4 lg:px-8">
         <div className="lg:hidden">
-          <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-2">
-            <HeaderLogo mobile />
-            <button
-              type="button"
-              aria-controls={mobilePanelId}
-              aria-expanded={isMobileExpanded}
-              aria-label={
+          <div className="overflow-hidden rounded-[30px] border border-white/8 bg-[linear-gradient(180deg,rgba(18,15,21,0.96),rgba(12,10,16,0.94))] shadow-[0_24px_70px_rgba(0,0,0,0.28)]">
+            <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-2 px-3 py-3">
+              <HeaderLogo mobile />
+              <button
+                type="button"
+                aria-controls={mobilePanelId}
+                aria-expanded={isMobileExpanded}
+                aria-label={
+                  isMobileExpanded
+                    ? "ย่อส่วนหัวของหน้า"
+                    : "ขยายส่วนหัวของหน้า"
+                }
+                onClick={() => setIsMobileExpanded((value) => !value)}
+                className={`inline-flex h-12 w-12 flex-none touch-manipulation cursor-pointer items-center justify-center rounded-full border text-accent-gold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold/70 ${
+                  isMobileExpanded
+                    ? "border-accent-gold/35 bg-accent-gold/10"
+                    : "border-white/10 bg-white/5 hover:border-accent-gold/45"
+                }`}
+              >
+                <svg
+                  viewBox="0 0 20 20"
+                  className={`h-5 w-5 transition-transform duration-200 ${
+                    isMobileExpanded ? "rotate-180" : ""
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.8"
+                >
+                  <path d="m5 7.5 5 5 5-5" />
+                </svg>
+              </button>
+            </div>
+
+            <div className="border-t border-accent-gold/12 px-2 pb-2 pt-1">
+              <HeaderNav mobile onNavigate={() => setIsMobileExpanded(false)} />
+            </div>
+
+            <div
+              id={mobilePanelId}
+              className={`grid min-w-0 overflow-hidden transition-[grid-template-rows,opacity,margin,padding] duration-300 ease-out ${
                 isMobileExpanded
-                  ? "ย่อส่วนหัวของหน้า"
-                  : "ขยายส่วนหัวของหน้า"
-              }
-              onClick={() => setIsMobileExpanded((value) => !value)}
-              className={`inline-flex h-12 w-12 flex-none touch-manipulation cursor-pointer items-center justify-center rounded-full border text-accent-gold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold/70 sm:h-14 sm:w-14 ${
-                isMobileExpanded
-                  ? "border-accent-gold/35 bg-accent-gold/10"
-                  : "border-white/10 bg-white/5 hover:border-accent-gold/45"
+                  ? "grid-rows-[1fr] px-3 pb-3 opacity-100"
+                  : "grid-rows-[0fr] px-3 pb-0 opacity-0"
               }`}
             >
-              <svg
-                viewBox="0 0 20 20"
-                className={`h-5 w-5 transition-transform duration-200 ${
-                  isMobileExpanded ? "rotate-180" : ""
-                }`}
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1.8"
-              >
-                <path d="m5 7.5 5 5 5-5" />
-              </svg>
-            </button>
-          </div>
-
-          <div
-            id={mobilePanelId}
-            className={`grid min-w-0 overflow-hidden transition-[grid-template-rows,opacity,margin] duration-300 ease-out ${
-              isMobileExpanded
-                ? "mt-4 grid-rows-[1fr] opacity-100"
-                : "mt-0 grid-rows-[0fr] opacity-0"
-            }`}
-          >
-            <div className="min-h-0 min-w-0">
-              <HeaderAuthForm mobile />
-              <div className="mt-4">
-                <HeaderNav mobile onNavigate={() => setIsMobileExpanded(false)} />
+              <div className="min-h-0 min-w-0">
+                <HeaderAuthForm mobile />
               </div>
             </div>
           </div>
         </div>
 
         <div className="hidden lg:block">
-          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-            <HeaderLogo />
-            <HeaderAuthForm />
+          <div className="relative overflow-hidden rounded-[36px] border border-white/8 bg-[linear-gradient(180deg,rgba(18,15,21,0.98),rgba(13,11,16,0.95))] shadow-[0_28px_80px_rgba(0,0,0,0.34)]">
+            <div className="header-ornament pointer-events-none absolute inset-y-0 left-0 w-[28rem] opacity-80" />
+            <div className="relative flex items-center justify-between gap-6 px-6 py-5 xl:px-8">
+              <HeaderLogo />
+              <HeaderAuthForm />
+            </div>
+
+            <div className="relative border-t border-accent-gold/12 px-3 py-3 xl:px-4">
+              <HeaderNav />
+            </div>
           </div>
-          <HeaderNav />
         </div>
       </div>
     </header>
@@ -95,37 +104,40 @@ function HeaderLogo({ mobile = false }: { mobile?: boolean }) {
   return (
     <a
       href="#top"
-      className={`group flex items-center rounded-full border border-white/10 bg-white/4 transition-colors duration-200 hover:border-accent-gold/50 ${
+      className={`group flex min-w-0 items-center transition-colors duration-200 ${
         mobile
-          ? "min-w-0 flex-1 gap-3 px-4 py-2.5"
-          : "w-fit gap-4 px-5 py-3"
+          ? "gap-3 rounded-[24px] border border-white/8 bg-white/4 px-3 py-2.5"
+          : "gap-4 py-1"
       }`}
     >
       <div
         className={`flex flex-none items-center justify-center rounded-full bg-[radial-gradient(circle_at_50%_30%,rgba(255,226,145,0.82),rgba(191,139,28,0.34)_58%,transparent_74%)] ${
-          mobile ? "h-12 w-12" : "h-14 w-14"
+          mobile ? "h-12 w-12" : "h-16 w-16"
         }`}
       >
         <AppIcon
           name="crown"
           className={`text-accent-gold drop-shadow-[0_0_16px_rgba(212,175,55,0.55)] ${
-            mobile ? "h-8 w-8" : "h-10 w-10"
+            mobile ? "h-8 w-8" : "h-11 w-11"
           }`}
         />
       </div>
+
       <div className="min-w-0 space-y-1">
         <p
-          className={`truncate font-semibold uppercase text-foreground/55 ${
-            mobile ? "text-[9px] tracking-[0.3em]" : "text-[11px] tracking-[0.42em]"
+          className={`truncate font-semibold uppercase text-foreground/56 ${
+            mobile
+              ? "text-[10px] tracking-[0.26em]"
+              : "text-[12px] tracking-[0.34em]"
           }`}
         >
           themeKiku คาสิโน ออนไลน์
         </p>
         <p
-          className={`truncate font-display text-white transition-colors duration-200 group-hover:text-accent-gold-light ${
+          className={`truncate font-display font-semibold leading-none transition-colors duration-200 group-hover:text-accent-gold-light ${
             mobile
-              ? "text-[clamp(1.5rem,6.5vw,1.85rem)] leading-none"
-              : "text-2xl"
+              ? "text-[clamp(1.35rem,6vw,1.8rem)] text-white"
+              : "text-[2rem] text-[#f5d894]"
           }`}
         >
           themeKiku Online
@@ -138,57 +150,24 @@ function HeaderLogo({ mobile = false }: { mobile?: boolean }) {
 function HeaderAuthForm({ mobile = false }: { mobile?: boolean }) {
   if (mobile) {
     return (
-      <div className="w-full min-w-0 overflow-hidden rounded-[26px] border border-white/8 bg-black/30 shadow-[0_24px_60px_rgba(0,0,0,0.28)]">
+      <div className="w-full min-w-0 overflow-hidden rounded-[26px] border border-white/8 bg-black/25 shadow-[0_18px_40px_rgba(0,0,0,0.24)]">
         <div className="flex min-w-0 flex-col gap-2.5 p-3">
-          {/* Username */}
-          <label className="flex h-11 w-full items-center overflow-hidden rounded-full border border-white/10 bg-white/4 px-4">
-            <span className="sr-only">ชื่อผู้ใช้</span>
-            <input
-              type="text"
-              placeholder="กรุณาใส่ยูสเซอร์"
-              className="w-full bg-transparent text-sm text-foreground placeholder:text-foreground/35 focus:outline-none"
-            />
-          </label>
+          <FieldInput label="ชื่อผู้ใช้" placeholder="กรุณาใส่ยูสเซอร์" />
+          <FieldInput
+            label="รหัสผ่าน"
+            placeholder="กรุณาใส่รหัสผ่าน"
+            type="password"
+            trailing="?"
+          />
 
-          {/* Password */}
-          <label className="flex h-11 w-full items-center overflow-hidden rounded-full border border-white/10 bg-white/4 px-4">
-            <span className="sr-only">รหัสผ่าน</span>
-            <input
-              type="password"
-              placeholder="กรุณาใส่รหัสผ่าน"
-              className="min-w-0 flex-1 bg-transparent text-sm text-foreground placeholder:text-foreground/35 focus:outline-none"
-            />
-            <span className="inline-flex h-7 w-7 flex-none items-center justify-center rounded-full border border-accent-gold/25 bg-accent-gold/8 text-xs font-semibold text-accent-gold">
-              ?
-            </span>
-          </label>
-
-          {/* Buttons row */}
-          <div className="flex min-w-0 flex-col gap-2 sm:flex-row">
+          <div className="flex min-w-0 flex-col gap-2">
             <button
               type="button"
-              className="gold-button touch-manipulation cursor-pointer min-h-11 min-w-0 w-full justify-center px-4 text-sm font-semibold sm:flex-1"
+              className="gold-button touch-manipulation cursor-pointer min-h-11 min-w-0 w-full justify-center px-4 text-sm font-semibold"
             >
               ล็อกอิน
             </button>
-            <button
-              type="button"
-              className="inline-flex touch-manipulation cursor-pointer items-center justify-center gap-1.5 rounded-full border border-white/10 bg-white/4 px-3 text-sm font-medium text-foreground transition-colors duration-200 hover:border-accent-gold/50 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold/70 min-h-11 min-w-0 w-full sm:flex-1"
-            >
-              <span className="inline-flex h-4 w-4 flex-none overflow-hidden rounded-full border border-white/20 bg-[linear-gradient(180deg,#0a4ab8_0_33%,#ffffff_33%_66%,#cc1829_66%_100%)]" />
-              <span className="truncate">ภาษาไทย</span>
-              <svg
-                viewBox="0 0 20 20"
-                className="h-3.5 w-3.5 flex-none text-accent-gold"
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1.7"
-              >
-                <path d="m5 7.5 5 5 5-5" />
-              </svg>
-            </button>
+            <LanguageButton mobile />
           </div>
         </div>
       </div>
@@ -196,9 +175,14 @@ function HeaderAuthForm({ mobile = false }: { mobile?: boolean }) {
   }
 
   return (
-    <form className="w-full min-w-0 grid rounded-[28px] border border-white/8 bg-black/30 shadow-[0_24px_60px_rgba(0,0,0,0.28)] gap-3 p-3 sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_auto_auto] sm:items-center">
-      <FieldInput label="ชื่อผู้ใช้" placeholder="กรุณาใส่ยูสเซอร์" />
+    <form className="flex w-full max-w-[860px] flex-wrap items-center justify-end gap-3">
       <FieldInput
+        compact
+        label="ชื่อผู้ใช้"
+        placeholder="กรุณาใส่ยูสเซอร์"
+      />
+      <FieldInput
+        compact
         label="รหัสผ่าน"
         placeholder="กรุณาใส่รหัสผ่าน"
         type="password"
@@ -206,28 +190,11 @@ function HeaderAuthForm({ mobile = false }: { mobile?: boolean }) {
       />
       <button
         type="button"
-        className="gold-button touch-manipulation cursor-pointer justify-center font-semibold min-h-11 w-full px-5 py-2 text-sm sm:w-auto"
+        className="gold-button min-h-12 cursor-pointer justify-center px-8 text-base font-semibold"
       >
         ล็อกอิน
       </button>
-      <button
-        type="button"
-        className="inline-flex touch-manipulation cursor-pointer items-center justify-center gap-2 rounded-full border border-white/10 bg-white/4 font-medium text-foreground transition-colors duration-200 hover:border-accent-gold/50 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold/70 min-h-11 w-full px-4 text-sm sm:w-auto"
-      >
-        <span className="inline-flex h-5 w-5 overflow-hidden rounded-full border border-white/20 bg-[linear-gradient(180deg,#0a4ab8_0_33%,#ffffff_33%_66%,#cc1829_66%_100%)]" />
-        ภาษาไทย
-        <svg
-          viewBox="0 0 20 20"
-          className="h-4 w-4 text-accent-gold"
-          fill="none"
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="1.7"
-        >
-          <path d="m5 7.5 5 5 5-5" />
-        </svg>
-      </button>
+      <LanguageButton />
     </form>
   );
 }
@@ -239,37 +206,55 @@ function HeaderNav({
   mobile?: boolean;
   onNavigate?: () => void;
 }) {
-  return (
-    <nav
-      className={`hide-scrollbar w-full min-w-0 overflow-x-auto border border-white/8 bg-black/18 ${
-        mobile
-          ? "snap-x snap-mandatory scroll-px-2 rounded-[28px] p-2"
-          : "mt-4 rounded-full px-2 py-2"
-      }`}
-    >
-      <ul
-        className={`flex items-center gap-2 ${
-          mobile ? "min-w-full" : "min-w-max"
-        }`}
+  if (mobile) {
+    return (
+      <nav
+        className="hide-scrollbar w-full min-w-0 overflow-x-auto"
+        aria-label="เมนูหลัก"
       >
+        <ul className="flex min-w-max items-stretch gap-2 px-1 py-1">
+          {navItems.map((item, index) => (
+            <li key={item.id}>
+              <a
+                href={`#${item.id}`}
+                onClick={onNavigate}
+                className={`flex w-[5.1rem] cursor-pointer flex-col items-center justify-center gap-2 rounded-[22px] border px-3 py-3 text-center transition-all duration-200 ${
+                  index === 0
+                    ? "border-accent-gold/35 bg-[linear-gradient(180deg,rgba(212,175,55,0.14),rgba(212,175,55,0.04))] text-accent-gold-light"
+                    : "border-transparent bg-white/3 text-accent-gold/88 hover:border-accent-gold/18 hover:bg-accent-gold/8"
+                }`}
+              >
+                <span className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-current/18 bg-black/14">
+                  <AppIcon name={item.icon} className="h-5 w-5" />
+                </span>
+                <span className="text-[11px] font-semibold leading-tight">
+                  {item.label}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    );
+  }
+
+  return (
+    <nav aria-label="เมนูหลัก">
+      <ul className="grid grid-cols-4 gap-2 xl:grid-cols-8">
         {navItems.map((item, index) => (
-          <li key={item.id} className={mobile ? "snap-start" : undefined}>
+          <li key={item.id}>
             <a
               href={`#${item.id}`}
-              onClick={onNavigate}
-              className={`nav-item min-h-12 touch-manipulation ${
-                mobile ? "shrink-0 px-4" : ""
-              } ${
+              className={`group flex min-h-[6.6rem] cursor-pointer flex-col items-center justify-center gap-2.5 rounded-[26px] border px-4 py-4 text-center transition-all duration-200 ${
                 index === 0
-                  ? "border-accent-gold/55 bg-accent-gold/10 text-accent-gold-light"
-                  : "border-transparent text-foreground/70 hover:border-white/10 hover:text-white"
+                  ? "border-accent-gold/28 bg-[linear-gradient(180deg,rgba(212,175,55,0.12),rgba(212,175,55,0.02))] text-accent-gold-light shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]"
+                  : "border-transparent text-accent-gold/88 hover:border-accent-gold/18 hover:bg-accent-gold/6"
               }`}
             >
-              <AppIcon
-                name={item.icon}
-                className="h-5 w-5 flex-none text-current"
-              />
-              <span className="whitespace-nowrap text-sm font-medium tracking-[0.08em]">
+              <span className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-current/18 bg-black/12 transition-colors duration-200 group-hover:bg-accent-gold/10">
+                <AppIcon name={item.icon} className="h-6 w-6" />
+              </span>
+              <span className="text-base font-semibold leading-none">
                 {item.label}
               </span>
             </a>
@@ -285,25 +270,70 @@ function FieldInput({
   placeholder,
   type = "text",
   trailing,
+  compact = false,
 }: {
   label: string;
   placeholder: string;
   type?: "text" | "password";
   trailing?: string;
+  compact?: boolean;
 }) {
   return (
-    <label className="flex min-h-12 w-full min-w-0 items-center gap-2 overflow-hidden rounded-full border border-white/10 bg-white/4 px-4">
+    <label
+      className={`flex min-w-0 items-center gap-2 overflow-hidden rounded-full border px-4 ${
+        compact
+          ? "min-h-12 w-full min-w-[13rem] border-accent-gold/18 bg-[#17131a]/92 text-foreground xl:w-[13.7rem]"
+          : "min-h-12 w-full border-white/10 bg-white/4"
+      }`}
+    >
       <span className="sr-only">{label}</span>
       <input
         type={type}
         placeholder={placeholder}
-        className="min-w-0 flex-1 bg-transparent text-sm text-foreground placeholder:text-foreground/35 focus:outline-none"
+        className={`min-w-0 flex-1 bg-transparent focus:outline-none ${
+          compact
+            ? "text-sm text-foreground placeholder:text-foreground/34"
+            : "text-sm text-foreground placeholder:text-foreground/35"
+        }`}
       />
       {trailing ? (
-        <span className="inline-flex h-7 w-7 flex-none items-center justify-center rounded-full border border-accent-gold/25 bg-accent-gold/8 text-xs font-semibold text-accent-gold">
+        <span
+          className={`inline-flex flex-none items-center justify-center rounded-full text-xs font-semibold ${
+            compact
+              ? "h-7 w-7 border border-accent-gold/20 bg-accent-gold/8 text-accent-gold"
+              : "h-7 w-7 rounded-full border border-accent-gold/25 bg-accent-gold/8 text-accent-gold"
+          }`}
+        >
           {trailing}
         </span>
       ) : null}
     </label>
+  );
+}
+
+function LanguageButton({ mobile = false }: { mobile?: boolean }) {
+  return (
+    <button
+      type="button"
+      className={`inline-flex cursor-pointer items-center justify-center gap-2 rounded-full border transition-colors duration-200 hover:border-accent-gold/42 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold/70 ${
+        mobile
+          ? "min-h-11 w-full border-white/10 bg-white/4 px-4 text-sm font-medium text-foreground"
+          : "min-h-12 border-transparent bg-transparent px-2 text-base font-medium text-foreground/88"
+      }`}
+    >
+      <span className="inline-flex h-5 w-5 flex-none overflow-hidden rounded-full border border-white/20 bg-[linear-gradient(180deg,#0a4ab8_0_33%,#ffffff_33%_66%,#cc1829_66%_100%)]" />
+      <span className="truncate">ภาษาไทย</span>
+      <svg
+        viewBox="0 0 20 20"
+        className="h-4 w-4 flex-none text-accent-gold"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.7"
+      >
+        <path d="m5 7.5 5 5 5-5" />
+      </svg>
+    </button>
   );
 }
