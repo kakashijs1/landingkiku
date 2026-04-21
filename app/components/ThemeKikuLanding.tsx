@@ -10,6 +10,9 @@ type Reason = {
   description: string;
   icon: IconName;
   accent: string;
+  imageSrc: string;
+  imageAlt: string;
+  imagePosition?: string;
 };
 
 type SideAction = {
@@ -52,95 +55,117 @@ const heroSlides: HeroCarouselSlide[] = [
 
 const gameLobbyItems: GameLobbyItem[] = [
   {
-    id: "fish-machine",
+    id: "casino-live",
+    title: "เกมคาสิโน",
+    subtitle: "โต๊ะสดโทนพรีเมียมสำหรับผู้เล่นที่ชอบบรรยากาศแบบวีไอพี",
+    cue: "Royal Live",
+    icon: "cards",
+    accent: "from-[#57401b]/94 via-[#171318]/92 to-[#100d11]/98",
+    imageSrc: "/gameHeader/gamecasino1.png",
+    imageAlt: "เกมคาสิโน",
+  },
+  {
+    id: "croupier-selection",
+    title: "ดีลเลอร์บิคอน",
+    subtitle: "วางหมวดเกมสดหรือดีลเลอร์คู่เด่นให้ใกล้หน้าตาใน reference",
+    cue: "Live Croupier",
+    icon: "live",
+    accent: "from-[#4f3b1e]/94 via-[#171316]/92 to-[#100d11]/98",
+    imageSrc: "/gameHeader/banner_slide_croupier.faac5a8d.png",
+    imageAlt: "ดีลเลอร์บิคอน",
+  },
+  {
+    id: "baccarat-lobby",
+    title: "บาคาร่ามาเก๊าถึง",
+    subtitle: "หมวดเด่นกึ่งกลางสำหรับเน้นเกมหลักตามจังหวะของ reference",
+    cue: "Macau Baccarat",
+    icon: "live",
+    accent: "from-[#74521e]/94 via-[#181315]/92 to-[#100d11]/98",
+    imageSrc: "/gameHeader/banner_slide_bc.54049352.png",
+    imageAlt: "บาคาร่ามาเก๊าถึง",
+  },
+  {
+    id: "fish-hunter",
     title: "เครื่องเกมยิงปลา",
-    subtitle: "พื้นที่ skeleton สำหรับตัวการ์ตูนหรือ artwork หมวดยิงปลา",
-    cue: "Character Slot 01",
+    subtitle: "วางกลุ่มเกมสายแอ็กชันหรือคาแรกเตอร์สดจัดได้ในหมวดนี้",
+    cue: "Fish Hunter",
     icon: "fish",
     accent: "from-[#223438]/94 via-[#111518]/92 to-[#100d11]/98",
+    imageSrc: "/gameHeader/banner_slide_fish.b3356d05.png",
+    imageAlt: "เครื่องเกมยิงปลา",
   },
   {
-    id: "slot-popular",
+    id: "slot-premium",
     title: "สล็อตยอดนิยม",
-    subtitle: "วางภาพ key visual ของสล็อตหรือ mascot หลักในหมวดนี้ได้",
-    cue: "Character Slot 02",
-    icon: "slot",
-    accent: "from-[#5f3514]/94 via-[#171316]/92 to-[#100d11]/98",
-  },
-  {
-    id: "casino-game",
-    title: "เกมคาสิโน",
-    subtitle: "การ์ดกลางถูกเน้นเป็น active state พร้อม pill label ด้านล่าง",
-    cue: "Character Slot 03",
-    icon: "cards",
-    accent: "from-[#6c5124]/94 via-[#181315]/92 to-[#100d11]/98",
-  },
-  {
-    id: "dealer-selection",
-    title: "ดีลเลอร์บล็อกเชน",
-    subtitle: "ใช้สำหรับภาพคู่หรืองาน character group ที่ต้องการสไลด์เพิ่ม",
-    cue: "Character Slot 04",
-    icon: "esports",
-    accent: "from-[#4f3b1e]/94 via-[#171316]/92 to-[#100d11]/98",
-  },
-  {
-    id: "blackjack-zone",
-    title: "แบล็กแจ็กเข้าถึง",
-    subtitle: "การ์ด skeleton ปลายแถวสำหรับ artwork เพิ่มเติมหรือหมวดพิเศษ",
-    cue: "Character Slot 05",
+    subtitle: "การ์ดปลายแถวสำหรับโปรโมตเกมทำเงินหรือค่ายที่กำลังมาแรง",
+    cue: "Top Winner",
     icon: "star",
     accent: "from-[#4b2d33]/94 via-[#161216]/92 to-[#100d11]/98",
+    imageSrc: "/gameHeader/banner_slide_slot.7d5f90b7.png",
+    imageAlt: "สล็อตยอดนิยม",
   },
 ];
 
 const reasons: Reason[] = [
   {
-    eyebrow: "One Account, Unlimited Play",
-    title: "บัญชีเดียวเล่นครบทุกเกม",
-    description:
-      "สลับระหว่างคาสิโนสด สล็อต กีฬา และลอตเตอรี่ได้โดยไม่ต้องสมัครซ้ำ",
-    icon: "wallet",
-    accent: "from-[#3c2a1a] via-[#171318] to-[#100d11]",
-  },
-  {
     eyebrow: "Hundreds of Slot Games",
     title: "เกมสล็อตหลายร้อยแบบ",
-    description:
-      "คัดค่ายเกมยอดนิยมพร้อมหน้าตู้หรูสไตล์คาสิโน เพื่อให้โทนหน้าเว็บสอดคล้องกับ reference",
+    description: "รวมเกมยอดนิยมและตู้เด่นในหน้าเดียว",
     icon: "slot",
     accent: "from-[#6d4a1c] via-[#221913] to-[#100d11]",
+    imageSrc: "/whyme/bg_avtg03.30ba153b.png",
+    imageAlt: "เกมสล็อตหลายร้อยแบบ",
+    imagePosition: "center center",
   },
   {
     eyebrow: "No. 1 in Asia",
-    title: "ภาพลักษณ์ระดับเอเชีย",
-    description:
-      "โครงหน้าและจังหวะการเล่าเรื่องถูกจัดให้อารมณ์พรีเมียม ดูใหญ่ และชัดเรื่องความน่าเชื่อถือ",
+    title: "อันดับหนึ่งของเอเชีย",
+    description: "ตอกย้ำภาพลักษณ์และความน่าเชื่อถือระดับภูมิภาค",
     icon: "star",
     accent: "from-[#4a331b] via-[#181318] to-[#100d11]",
+    imageSrc: "/whyme/bg_avtg04.de84ae19.png",
+    imageAlt: "อันดับหนึ่งของเอเชีย",
+    imagePosition: "center center",
   },
   {
     eyebrow: "Fast & Secure",
     title: "ระบบเร็วและปลอดภัย",
-    description:
-      "โทนสีเข้มทองช่วยเน้นความมั่นคง พร้อมปุ่มและจุดโต้ตอบที่มองเห็นได้ชัดบนทุก breakpoint",
+    description: "สื่อเรื่อง speed และ security ชัดเจนในบัตรเดียว",
     icon: "shield",
     accent: "from-[#5a3d18] via-[#1b1617] to-[#100d11]",
+    imageSrc: "/whyme/bg_avtg05.0c9414d0.png",
+    imageAlt: "ระบบเร็วและปลอดภัย",
+    imagePosition: "center center",
   },
   {
     eyebrow: "Trusted Platform",
     title: "แพลตฟอร์มที่ไว้ใจได้",
-    description:
-      "ใช้ section trust, proof และ iconography แบบสม่ำเสมอเพื่อสร้างความรู้สึก professional",
+    description: "ให้ภาพของ trust และ proof แบบตรงกับ ref",
     icon: "crown",
     accent: "from-[#6a4f1e] via-[#1e1714] to-[#100d11]",
+    imageSrc: "/whyme/bg_avtg06.0780365d.png",
+    imageAlt: "แพลตฟอร์มที่ไว้ใจได้",
+    imagePosition: "center center",
   },
   {
     eyebrow: "24/7 Customer Support",
-    title: "ทีมงานพร้อมดูแลตลอดเวลา",
-    description:
-      "เพิ่ม rail ด้านข้างและจุดติดต่อหลักให้เหมือนหน้าอ้างอิงแต่ยังคุมความเรียบร้อยบนมือถือ",
+    title: "บริการลูกค้าตลอด 24 ชั่วโมง",
+    description: "ช่องทางช่วยเหลือพร้อมตอบไวทั้งวัน",
     icon: "support",
     accent: "from-[#4d3518] via-[#1c1617] to-[#100d11]",
+    imageSrc: "/whyme/bg_avtg01.3529caef.png",
+    imageAlt: "บริการลูกค้าตลอด 24 ชั่วโมง",
+    imagePosition: "center center",
+  },
+  {
+    eyebrow: "One Account, Unlimited Play",
+    title: "บัญชีเดียวเล่นครบทุกเกม",
+    description: "สลับเล่นได้ครบทุกหมวดในระบบเดียว",
+    icon: "wallet",
+    accent: "from-[#3c2a1a] via-[#171318] to-[#100d11]",
+    imageSrc: "/whyme/bg_avtg02.e7caeb5f.png",
+    imageAlt: "บัญชีเดียวเล่นครบทุกเกม",
+    imagePosition: "center center",
   },
 ];
 
@@ -187,30 +212,6 @@ const footerSocials: FooterSocial[] = [
   { label: "ไลน์", icon: "line" },
 ];
 
-function getStripClipPath(index: number, total: number) {
-  if (index === 0) {
-    return "polygon(0 0, 100% 0, calc(100% - 30px) 100%, 0 100%)";
-  }
-
-  if (index === total - 1) {
-    return "polygon(30px 0, 100% 0, 100% 100%, 0 100%)";
-  }
-
-  return "polygon(30px 0, 100% 0, calc(100% - 30px) 100%, 0 100%)";
-}
-
-function getStripPanelClipPath(index: number, total: number) {
-  if (index === 0) {
-    return "polygon(0 0, 100% 0, calc(100% - 22px) 100%, 0 100%)";
-  }
-
-  if (index === total - 1) {
-    return "polygon(22px 0, 100% 0, 100% 100%, 0 100%)";
-  }
-
-  return "polygon(22px 0, 100% 0, calc(100% - 22px) 100%, 0 100%)";
-}
-
 export default function ThemeKikuLanding() {
   return (
     <div className="luxury-page text-foreground">
@@ -233,31 +234,43 @@ function HeroSection() {
   return (
     <section
       id="top"
-      className="relative px-4 pb-10 pt-6 sm:px-6 sm:pb-16 lg:px-8"
+      className="relative px-4 pb-16 pt-4 sm:px-6 sm:pb-24 lg:px-8 lg:pb-28"
     >
-      <div className="mx-auto max-w-[1400px]">
-        <div className="hero-shell section-surface relative overflow-hidden rounded-[34px] px-4 py-6 sm:px-6 sm:py-7 lg:px-8 lg:py-8">
-          <div className="hero-backdrop absolute inset-0" aria-hidden="true" />
-          <div className="absolute inset-x-0 top-0 h-24 bg-[radial-gradient(circle_at_top,rgba(255,227,157,0.22),transparent_70%)]" />
-          <div className="absolute bottom-0 left-0 right-0 h-28 bg-[linear-gradient(180deg,transparent,rgba(13,11,16,0.82))]" />
+      <div className="mx-auto max-w-[1500px]">
+        <div className="relative overflow-visible pb-[10.4rem] sm:pb-[12.2rem] lg:pb-[14.2rem]">
+          <div
+            className="absolute inset-0 rounded-[36px] bg-[linear-gradient(180deg,rgba(17,14,20,0.86),rgba(10,9,13,0.92)),repeating-linear-gradient(90deg,rgba(255,216,138,0.06)_0_4px,transparent_4px_126px,rgba(255,216,138,0.05)_126px_128px,transparent_128px_248px)]"
+            aria-hidden="true"
+          />
+          <div
+            className="absolute inset-0 rounded-[36px] bg-[radial-gradient(circle_at_50%_0%,rgba(255,226,145,0.18),transparent_28%),linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0))]"
+            aria-hidden="true"
+          />
+          <div className="absolute inset-0 z-20 pointer-events-none" aria-hidden="true">
+            <Image
+              src="/mask/obj_mask.96351921.png"
+              alt=""
+              fill
+              className="object-fill opacity-[0.96]"
+              sizes="(min-width: 1280px) 1500px, 100vw"
+            />
+          </div>
 
-          <div className="relative z-10 space-y-6">
-            <div
-              id="hero-swiper"
-              data-reveal
-              style={{ animationDelay: "120ms" }}
-            >
-              <HeroCarousel slides={heroSlides} />
-            </div>
+          <div
+            id="hero-swiper"
+            className="relative z-10"
+            data-reveal
+            style={{ animationDelay: "120ms" }}
+          >
+            <HeroCarousel slides={heroSlides} />
+          </div>
 
-            <div
-              className="relative z-20 -mt-4 sm:-mt-6 lg:-mt-8"
-              data-reveal
-              style={{ animationDelay: "200ms" }}
-            >
-              <GameLobbyCarousel items={gameLobbyItems} />
-            </div>
-
+          <div
+            className="absolute inset-x-0 -bottom-3 z-30 px-3 sm:-bottom-4 sm:px-6 lg:-bottom-6 lg:px-8"
+            data-reveal
+            style={{ animationDelay: "200ms" }}
+          >
+            <GameLobbyCarousel items={gameLobbyItems} />
           </div>
         </div>
       </div>
@@ -270,7 +283,7 @@ function AboutSection() {
     <section id="about" className="px-4 pb-14 pt-10 sm:px-6 lg:px-8">
       <div className="section-surface about-section-shell mx-auto max-w-[1360px] overflow-hidden rounded-[34px] px-5 py-7 sm:px-8 sm:py-8 lg:px-9 lg:py-9">
         <div className="about-frame-shine absolute inset-0" aria-hidden="true" />
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(520px,1.1fr)] lg:items-center">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,0.86fr)_minmax(560px,1.14fr)] lg:items-center">
           <div className="about-copy-shell relative z-10 space-y-5 lg:pr-4">
             <div className="flex flex-wrap items-center gap-3">
               <div className="about-pill">
@@ -295,16 +308,16 @@ function AboutSection() {
                 คือคาสิโนออนไลน์อันดับต้นของประเทศไทย
               </h2>
               <p className="max-w-[39rem] text-[15px] leading-8 text-foreground/74 sm:text-base">
-                โครงนี้ถูกออกแบบให้เป็นแถบแนวยาวแบบ reference โดยเว้นฝั่งขวาเป็น
-                placeholder สำหรับภาพหลักและภาพกิจกรรมที่คุณจะใส่เองภายหลัง
-                ทั้งหมดถูกจัดจังหวะให้อ่านง่าย ดูพรีเมียม และไม่อัดแน่นเกินไป
+                เลย์เอาต์ส่วนนี้ถูกจัดให้ใกล้กับ reference มากขึ้น โดยฝั่งซ้ายเล่า
+                เรื่องแบรนด์แบบกระชับ ส่วนฝั่งขวาใช้ภาพ palace และ hostess จริงที่มีใน
+                โปรเจคเพื่อให้หน้าดูแน่นแบบคาสิโนพรีเมียม แต่ยังอ่านง่ายบนทุกขนาดจอ
               </p>
             </div>
 
             <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium text-foreground/62">
               {[
-                "เลย์เอาต์แนวยาว",
-                "พร้อมแทนรูปจริง",
+                "เลย์เอาต์ใกล้ภาพอ้างอิง",
+                "ใช้ asset จริงที่มีแล้ว",
                 "คุมโทนหรูบนทุกจอ",
               ].map((item) => (
                 <span key={item} className="inline-flex items-center gap-2">
@@ -322,74 +335,17 @@ function AboutSection() {
             </a>
           </div>
 
-          <div className="about-visual-cluster relative min-h-[19rem] sm:min-h-[21rem] lg:min-h-[23rem]">
+          <div className="about-visual-cluster relative min-h-[20rem] sm:min-h-[24rem] lg:min-h-[26rem]">
             <div className="about-visual-glow absolute inset-0" />
-            <div className="about-stage-lines absolute inset-0" />
-
-            <div
-              className="about-main-panel skeleton-shimmer absolute bottom-[14%] left-[2%] h-[55%] w-[60%] overflow-hidden border border-accent-gold/16 bg-[linear-gradient(180deg,rgba(255,255,255,0.07),rgba(255,255,255,0.02))]"
-              style={{
-                clipPath: "polygon(8% 0,100% 0,92% 100%,0 100%)",
-              }}
-            >
-              <div className="absolute inset-[0.8rem] border border-white/8 bg-[radial-gradient(circle_at_50%_0%,rgba(255,226,145,0.14),transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.04),rgba(0,0,0,0.12))]" />
-              <div className="absolute inset-x-8 top-6 h-3 rounded-full bg-accent-gold/22" />
-              <div className="absolute inset-x-12 top-12 h-3 rounded-full bg-white/10" />
-              <div className="absolute inset-x-8 bottom-7 rounded-[16px] border border-dashed border-accent-gold/18 bg-black/10 py-4 text-center text-[10px] font-semibold uppercase tracking-[0.24em] text-accent-gold/56">
-                Main Image Slot
-              </div>
-            </div>
-
-            <div
-              className="about-triangle-frame absolute right-[11%] top-[8%] h-[34%] w-[31%] sm:right-[10%] sm:w-[29%] lg:right-[11%] lg:h-[36%] lg:w-[30%]"
-              style={{
-                clipPath: "polygon(18% 0,100% 0,82% 100%,0 100%)",
-              }}
-            >
-              <div
-                className="skeleton-shimmer absolute inset-[0.55rem] border border-white/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(0,0,0,0.08))]"
-                style={{
-                  clipPath: "polygon(18% 0,100% 0,82% 100%,0 100%)",
-                }}
-              >
-                <div className="absolute inset-x-6 top-5 h-3 rounded-full bg-accent-gold/24" />
-                <div className="absolute inset-x-8 top-10 h-3 rounded-full bg-white/10" />
-                <div className="absolute inset-x-6 bottom-6 rounded-[14px] border border-dashed border-accent-gold/18 bg-black/10 py-4 text-center text-[10px] font-semibold uppercase tracking-[0.2em] text-accent-gold/54">
-                  Gallery A
-                </div>
-              </div>
-            </div>
-
-            <div
-              className="about-triangle-frame absolute right-[1%] top-[18%] h-[42%] w-[17%] sm:right-[2%] sm:w-[16%] lg:right-[2%] lg:h-[46%] lg:w-[15%]"
-              style={{
-                clipPath: "polygon(0 0,78% 0,100% 100%,22% 100%)",
-              }}
-            >
-              <div
-                className="skeleton-shimmer absolute inset-[0.5rem] border border-white/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(0,0,0,0.08))]"
-                style={{
-                  clipPath: "polygon(0 0,78% 0,100% 100%,22% 100%)",
-                }}
-              >
-                <div className="absolute inset-x-3 top-5 h-3 rounded-full bg-accent-gold/22" />
-                <div className="absolute inset-x-3 bottom-6 rounded-[12px] border border-dashed border-accent-gold/18 bg-black/10 py-4 text-center text-[10px] font-semibold uppercase tracking-[0.16em] text-accent-gold/54">
-                  B
-                </div>
-              </div>
-            </div>
-
-            <div
-              className="about-base-panel absolute bottom-[8%] left-[37%] h-[18%] w-[34%] overflow-hidden border border-white/8 bg-[linear-gradient(180deg,rgba(87,59,27,0.34),rgba(27,20,18,0.12))]"
-              style={{
-                clipPath: "polygon(12% 0,100% 0,86% 100%,0 100%)",
-              }}
-            >
-              <div className="absolute inset-[0.6rem] border border-dashed border-accent-gold/16 bg-black/8" />
-            </div>
-
-            <div className="about-visual-caption absolute bottom-[1%] left-[30%] inline-flex min-h-12 min-w-[14rem] items-center justify-center rounded-full border border-accent-gold/20 bg-[linear-gradient(180deg,rgba(31,24,18,0.96),rgba(21,16,18,0.96))] px-6 text-sm font-semibold text-accent-gold-light shadow-[0_18px_40px_rgba(0,0,0,0.34)]">
-              Premium Visual Story
+            <div className="absolute inset-0 overflow-hidden rounded-[30px] border border-accent-gold/16 bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.01))] shadow-[0_24px_60px_rgba(0,0,0,0.28)]">
+              <Image
+                src="/bgother/bg_homeWhy.a8b2d0a0.png"
+                alt="ภาพประกอบทำไมเลือกเรา"
+                fill
+                className="object-contain object-center"
+                sizes="(min-width: 1024px) 44vw, 92vw"
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(11,9,13,0.08),rgba(11,9,13,0)_30%,rgba(11,9,13,0.16)_100%)]" />
             </div>
           </div>
         </div>
@@ -400,71 +356,63 @@ function AboutSection() {
 
 function ReasonsSection() {
   return (
-    <section id="reasons" className="px-4 pb-14 pt-10 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-[1400px]">
-        <div className="overflow-hidden rounded-[34px] border border-white/8 bg-[linear-gradient(180deg,rgba(18,15,21,0.98),rgba(11,9,13,0.96))] shadow-[0_30px_80px_rgba(0,0,0,0.34)]">
-          <div className="relative border-b border-accent-gold/14 px-5 py-6 text-center sm:px-8 lg:px-12 lg:py-7">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,225,137,0.16),transparent_46%)]" />
+    <section id="reasons" className="overflow-hidden pb-14 pt-10">
+      <div className="relative bg-[linear-gradient(180deg,#111015,#0d0b10)]">
+        <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-8">
+          <div className="relative px-2 pb-7 pt-6 text-center sm:px-4 lg:pb-9 lg:pt-8">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,225,137,0.14),transparent_48%)]" />
             <div className="relative flex flex-col items-center justify-center gap-2 sm:flex-row sm:gap-4">
-              <span className="text-xl italic tracking-[0.38em] text-accent-gold-light/88 sm:text-3xl">
+              <span className="text-[1.15rem] italic tracking-[0.34em] text-accent-gold-light/88 sm:text-[1.75rem]">
                 Top
               </span>
-              <span className="reason-top-number font-display text-[clamp(4rem,10vw,7.4rem)] font-semibold leading-none text-transparent">
+              <span className="reason-top-number font-display text-[clamp(3.9rem,9vw,7rem)] font-semibold leading-none text-transparent">
                 6
               </span>
-              <h2 className="text-balance text-[clamp(1.35rem,3vw,2.45rem)] font-semibold italic tracking-[0.08em] text-[#f3d18d]">
+              <h2 className="text-balance text-[clamp(1.18rem,2.35vw,2.35rem)] font-semibold italic tracking-[0.06em] text-[#f3d18d]">
                 เหตุผลหลักที่ควรเลือก themeKiku Online
               </h2>
             </div>
           </div>
+        </div>
 
-          <div className="grid gap-px bg-accent-gold/10 md:grid-cols-2 xl:grid-cols-6">
-            {reasons.map((reason, index) => (
+        <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden border-y border-accent-gold/10 bg-[linear-gradient(180deg,rgba(28,23,18,0.36),rgba(14,12,16,0.94))]">
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-[linear-gradient(90deg,#0d0b10,transparent)] sm:w-24" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-[linear-gradient(270deg,#0d0b10,transparent)] sm:w-24" />
+          <div className="reasons-marquee-track flex w-max items-stretch">
+            {[...reasons, ...reasons].map((reason, index) => (
               <article
-                key={reason.title}
-                className={`reason-strip-card relative min-h-[24rem] overflow-hidden bg-gradient-to-br ${reason.accent}`}
-                data-reveal
+                key={`${reason.title}-${index}`}
+                className={`reason-strip-card group relative min-h-[12rem] w-[min(74vw,19rem)] flex-none overflow-hidden bg-gradient-to-br ${reason.accent} sm:w-[min(54vw,19.5rem)] lg:w-[min(19vw,21rem)] xl:w-[min(18vw,22rem)]`}
                 style={{
-                  animationDelay: `${index * 70}ms`,
-                  clipPath: getStripClipPath(index, reasons.length),
+                  clipPath:
+                    "polygon(30px 0, 100% 0, calc(100% - 30px) 100%, 0 100%)",
                 }}
               >
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,7,10,0.1),rgba(8,7,10,0.72))]" />
-                <div
-                  className="absolute left-4 right-4 top-4 border border-white/6 bg-white/3 p-4"
-                  style={{
-                    clipPath: getStripPanelClipPath(index, reasons.length),
-                  }}
-                >
-                  <div
-                    className="skeleton-shimmer reason-panel-shell relative h-32 overflow-hidden border border-accent-gold/18 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.01))]"
-                    style={{
-                      clipPath: getStripPanelClipPath(index, reasons.length),
-                    }}
-                  >
-                    <div className="absolute inset-x-4 top-4 h-3 rounded-full bg-accent-gold/22" />
-                    <div className="absolute inset-x-4 top-11 h-3 rounded-full bg-white/10" />
-                    <div className="absolute inset-x-5 bottom-4 rounded-[14px] border border-dashed border-accent-gold/18 bg-black/12 py-4 text-center text-[10px] font-semibold uppercase tracking-[0.24em] text-accent-gold/54">
-                      Image Slot {String(index + 1).padStart(2, "0")}
+                <Image
+                  src={reason.imageSrc}
+                  alt={reason.imageAlt}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  style={{ objectPosition: reason.imagePosition ?? "center" }}
+                  sizes="(min-width: 1280px) 21rem, (min-width: 640px) 19rem, 74vw"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,7,10,0.06),rgba(8,7,10,0.26)_100%)]" />
+                <div className="absolute inset-y-0 left-0 w-[68%] bg-[linear-gradient(90deg,rgba(9,8,11,0.86),rgba(9,8,11,0.58)_48%,rgba(9,8,11,0.12)_82%,transparent)]" />
+
+                <div className="absolute inset-0 z-10 flex items-start p-4 sm:p-5">
+                  <div className="max-w-[10rem] space-y-2 sm:max-w-[11rem]">
+                    <h3 className="text-balance text-[clamp(0.98rem,1.05vw,1.52rem)] font-semibold leading-[1.08] text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.5)]">
+                      {reason.title}
+                    </h3>
+                    <div className="inline-flex items-start gap-1.5 text-[0.8rem] italic leading-[1.16] text-[#ebcf92] sm:text-[0.9rem]">
+                      <span className="mt-[0.12rem] inline-flex h-4.5 w-4.5 items-center justify-center rounded-full border border-accent-gold/32 bg-black/18 text-[0.58rem] not-italic text-[#ebcf92]">
+                        &gt;
+                      </span>
+                      <span className="text-balance drop-shadow-[0_3px_12px_rgba(0,0,0,0.45)]">
+                        {reason.eyebrow}
+                      </span>
                     </div>
                   </div>
-                </div>
-
-                <div className="relative z-10 flex h-full flex-col justify-end p-5 pt-44">
-                  <div className="inline-flex items-center gap-2 text-accent-gold-light">
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-accent-gold/22 bg-black/16">
-                      <AppIcon name={reason.icon} className="h-5 w-5" />
-                    </span>
-                    <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-accent-gold-light/86">
-                      {reason.eyebrow}
-                    </span>
-                  </div>
-                  <h3 className="mt-4 text-2xl font-semibold leading-snug text-white">
-                    {reason.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-6 text-foreground/72">
-                    {reason.description}
-                  </p>
                 </div>
               </article>
             ))}
@@ -480,11 +428,11 @@ function SiteFooter() {
     <footer className="relative z-10 mt-8 overflow-hidden border-t border-accent-gold/10 bg-[#0c0a0f]">
       <div className="footer-lounge-backdrop absolute inset-0" />
       <Image
-        src="/themekiku-palace.svg"
+        src="/bgother/bg_footer.ef483996.jpg"
         alt=""
         fill
         aria-hidden="true"
-        className="pointer-events-none object-cover opacity-[0.08] blur-[1px] saturate-0"
+        className="pointer-events-none object-cover opacity-[0.34]"
         sizes="100vw"
       />
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,9,13,0.92),rgba(11,9,13,0.84)_28%,rgba(11,9,13,0.9))]" />
@@ -571,13 +519,13 @@ function SiteFooter() {
         </div>
       </div>
 
-      <div className="relative border-t border-accent-gold/10 bg-black/44">
-        <div className="mx-auto max-w-[1800px] px-3 py-4 sm:px-6">
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-center text-[clamp(1rem,1.6vw,1.65rem)] font-semibold uppercase tracking-[0.08em] text-accent-gold/40">
-            {providerNames.map((provider) => (
-              <span key={provider}>{provider}</span>
-            ))}
-          </div>
+      <div className="relative overflow-hidden border-t border-accent-gold/10 bg-black/44">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-[linear-gradient(90deg,#0c0a0f,transparent)]" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-[linear-gradient(270deg,#0c0a0f,transparent)]" />
+        <div className="provider-marquee-track flex w-max items-center gap-x-8 gap-y-4 px-3 py-4 text-center text-[clamp(1rem,1.6vw,1.65rem)] font-semibold uppercase tracking-[0.08em] text-accent-gold/40 sm:px-6">
+          {[...providerNames, ...providerNames].map((provider, index) => (
+            <span key={`${provider}-${index}`}>{provider}</span>
+          ))}
         </div>
       </div>
     </footer>

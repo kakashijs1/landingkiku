@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useId, useState } from "react";
 import AppIcon, { type IconName } from "./AppIcon";
 
@@ -28,7 +29,15 @@ export default function TopHeader() {
     <header className="sticky top-0 z-50 border-b border-accent-gold/10 bg-[#100d11]/92 backdrop-blur-xl">
       <div className="mx-auto max-w-[1400px] px-3 py-3 sm:px-6 sm:py-4 lg:px-8">
         <div className="lg:hidden">
-          <div className="overflow-hidden rounded-[30px] border border-white/8 bg-[linear-gradient(180deg,rgba(18,15,21,0.96),rgba(12,10,16,0.94))] shadow-[0_24px_70px_rgba(0,0,0,0.28)]">
+          <div className="relative overflow-hidden rounded-[30px] border border-white/8 bg-[linear-gradient(180deg,rgba(18,15,21,0.96),rgba(12,10,16,0.94))] shadow-[0_24px_70px_rgba(0,0,0,0.28)]">
+            <Image
+              src="/bgother/bg_header.6eb70f3d.jpg"
+              alt=""
+              fill
+              aria-hidden="true"
+              className="pointer-events-none object-cover opacity-70"
+              sizes="100vw"
+            />
             <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-2 px-3 py-3">
               <HeaderLogo mobile />
               <button
@@ -84,6 +93,14 @@ export default function TopHeader() {
 
         <div className="hidden lg:block">
           <div className="relative overflow-hidden rounded-[36px] border border-white/8 bg-[linear-gradient(180deg,rgba(18,15,21,0.98),rgba(13,11,16,0.95))] shadow-[0_28px_80px_rgba(0,0,0,0.34)]">
+            <Image
+              src="/bgother/bg_header.6eb70f3d.jpg"
+              alt=""
+              fill
+              aria-hidden="true"
+              className="pointer-events-none object-cover opacity-78"
+              sizes="(min-width: 1024px) 1400px, 100vw"
+            />
             <div className="header-ornament pointer-events-none absolute inset-y-0 left-0 w-[28rem] opacity-80" />
             <div className="relative flex items-center justify-between gap-6 px-6 py-5 xl:px-8">
               <HeaderLogo />

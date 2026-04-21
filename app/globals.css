@@ -638,6 +638,20 @@ select {
   filter: brightness(1.03);
 }
 
+.provider-marquee-track {
+  animation: providerMarquee 28s linear infinite;
+}
+
+.reasons-marquee-track {
+  animation: reasonsMarquee 34s linear infinite;
+  will-change: transform;
+}
+
+.reasons-marquee-track:hover,
+.reasons-marquee-track:focus-within {
+  animation-play-state: paused;
+}
+
 .nav-item {
   display: inline-flex;
   align-items: center;
@@ -743,6 +757,26 @@ select {
 @keyframes shimmerSlide {
   to {
     transform: translateX(100%);
+  }
+}
+
+@keyframes providerMarquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes reasonsMarquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
   }
 }
 
