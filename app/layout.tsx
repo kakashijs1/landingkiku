@@ -1,11 +1,19 @@
 import type { Metadata } from "next";
-import { Kanit } from "next/font/google";
+import { Kanit, Pridi } from "next/font/google";
 import "./globals.css";
 
 const kanit = Kanit({
   variable: "--font-body",
   subsets: ["thai", "latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
+  display: "swap",
+});
+
+const pridi = Pridi({
+  variable: "--font-display",
+  subsets: ["thai", "latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -27,7 +35,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="th" className={`${kanit.variable} h-full antialiased`}>
+    <html
+      lang="th"
+      className={`${kanit.variable} ${pridi.variable} h-full antialiased`}
+    >
       <body className="min-h-full">{children}</body>
     </html>
   );

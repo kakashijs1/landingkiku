@@ -30,6 +30,15 @@ type FooterSocial = {
   icon: IconName;
 };
 
+type PlatformHighlight = {
+  title: string;
+  eyebrow: string;
+  description: string;
+  icon: IconName;
+  accent: string;
+  note: string;
+};
+
 const heroSlides: HeroCarouselSlide[] = [
   {
     id: "hero-vip",
@@ -169,6 +178,49 @@ const reasons: Reason[] = [
   },
 ];
 
+const platformSignals = [
+  "บาคาร่า สล็อต และกีฬาในที่เดียว",
+  "รองรับทั้งเว็บไซต์และแอปพลิเคชัน",
+  "ทีมงานดูแลตลอด 24 ชั่วโมง",
+  "ธุรกรรมรวดเร็วและปลอดภัย",
+];
+
+const platformHighlights: PlatformHighlight[] = [
+  {
+    eyebrow: "Trusted Direct",
+    title: "เว็บตรงมาตรฐาน โปร่งใส และพร้อมดูแลทุกขั้นตอน",
+    description:
+      "เว็บตรงที่ได้มาตรฐาน มีใบอนุญาตถูกต้อง โปร่งใส ตรวจสอบได้ในทุกขั้นตอน พร้อมทีมงานมืออาชีพที่คอยดูแลตลอด 24 ชั่วโมง ให้คำแนะนำและช่วยเหลือทุกปัญหาอย่างรวดเร็ว ใส่ใจทุกรายละเอียดเพื่อให้คุณได้รับประสบการณ์ที่ดีที่สุดในการใช้งาน",
+    icon: "shield",
+    accent: "from-[#5b4219]/95 via-[#1a1418]/94 to-[#0e0b10]",
+    note: "ใบอนุญาตถูกต้อง • ทีมงาน 24/7",
+  },
+  {
+    eyebrow: "Modern Finance",
+    title: "ระบบการเงินทันสมัย ฝาก-ถอนอัตโนมัติแบบไม่สะดุด",
+    description:
+      "ระบบการเงินทันสมัย รองรับการฝาก-ถอนอัตโนมัติ ทำรายการได้รวดเร็ว ปลอดภัย ไม่มีสะดุด ให้คุณสนุกกับเกมได้อย่างต่อเนื่องโดยไม่ต้องกังวลเรื่องธุรกรรม",
+    icon: "wallet",
+    accent: "from-[#4a311d]/95 via-[#171116]/94 to-[#0d0a0f]",
+    note: "Auto Deposit & Withdrawal",
+  },
+  {
+    eyebrow: "Always Evolving",
+    title: "อัปเดตเกมใหม่และฟีเจอร์ทันสมัยอยู่เสมอ",
+    description:
+      "เรามุ่งมั่นพัฒนาแพลตฟอร์มอย่างต่อเนื่อง เพื่อนำเสนอเกมใหม่ ๆ และฟีเจอร์ที่ทันสมัยอยู่เสมอ ให้คุณไม่พลาดทุกความสนุกและความตื่นเต้นในโลกของการเดิมพันออนไลน์",
+    icon: "spark",
+    accent: "from-[#3d2c1f]/95 via-[#151116]/94 to-[#0d0a0f]",
+    note: "New Games • New Features",
+  },
+];
+
+const platformTrustSignals = [
+  "โปร่งใส ตรวจสอบได้",
+  "รองรับการใช้งานต่อเนื่อง",
+  "ประสบการณ์ระดับพรีเมียม",
+];
+
 const footerColumns: FooterColumn[] = [
   {
     title: "ความบันเทิงออนไลน์",
@@ -220,6 +272,7 @@ export default function ThemeKikuLanding() {
       <main className="relative z-10 overflow-x-clip">
         <HeroSection />
         <AboutSection />
+        <PlatformStorySection />
         <ReasonsSection />
       </main>
 
@@ -328,10 +381,10 @@ function AboutSection() {
             </div>
 
             <a
-              href="#reasons"
+              href="#platform-story"
               className="gold-button w-fit px-8 py-3 text-sm font-semibold"
             >
-              เรียนรู้เพิ่มเติม
+              ดูมาตรฐานแพลตฟอร์ม
             </a>
           </div>
 
@@ -362,6 +415,145 @@ function AboutSection() {
             <div className="about-visual-caption absolute bottom-[7%] left-[7%] z-20 inline-flex min-h-10 items-center gap-2 rounded-full border border-accent-gold/18 bg-[linear-gradient(180deg,rgba(12,10,14,0.92),rgba(12,10,14,0.76))] px-3.5 py-2 text-[0.8rem] font-semibold text-[#f3d18d] shadow-[0_18px_32px_rgba(0,0,0,0.24)] sm:min-h-11 sm:px-4 sm:text-[0.84rem]">
               <AppIcon name="crown" className="h-4.5 w-4.5 text-accent-gold" />
               <span>คาสิโนพรีเมียม ครบทุกประสบการณ์</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PlatformStorySection() {
+  return (
+    <section
+      id="platform-story"
+      className="px-4 pb-14 pt-2 sm:px-6 sm:pb-16 sm:pt-6 lg:px-8 lg:pb-20"
+    >
+      <div className="premium-story-shell section-surface relative mx-auto max-w-[1360px] overflow-hidden rounded-[34px] px-5 py-7 sm:px-8 sm:py-8 lg:px-10 lg:py-10 xl:px-12 xl:py-12">
+        <div className="premium-story-glow absolute inset-0" aria-hidden="true" />
+        <div
+          className="premium-story-aura premium-story-aura--left absolute"
+          aria-hidden="true"
+        />
+        <div
+          className="premium-story-aura premium-story-aura--right absolute"
+          aria-hidden="true"
+        />
+        <div className="premium-story-frame-shine absolute inset-0" aria-hidden="true" />
+
+        <div className="premium-story-stage relative z-10">
+          <div className="grid gap-8 xl:grid-cols-[minmax(0,0.78fr)_minmax(0,1.22fr)] xl:items-start xl:gap-12 2xl:gap-14">
+            <div className="premium-story-lead relative z-10 space-y-6 lg:space-y-7" data-reveal>
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="gold-pill">Premium Standard</span>
+                <div className="premium-story-token">
+                  <AppIcon name="spark" className="h-4.5 w-4.5" />
+                  <span>Editorial Platform View</span>
+                </div>
+              </div>
+
+              <div className="space-y-4 lg:space-y-5">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-accent-gold-light/62">
+                  The New Standard
+                </p>
+                <h2 className="font-display text-balance text-[clamp(2rem,4vw,3.8rem)] font-semibold leading-[1.06] text-white">
+                  ยกระดับภาพลักษณ์คาสิโนออนไลน์ให้ดูหรู น่าเชื่อถือ และครบทุกประสบการณ์ในหน้าเดียว
+                </h2>
+                <p className="max-w-[39rem] text-[15px] leading-8 text-foreground/78 sm:text-base lg:max-w-[41rem]">
+                  เราคือแพลตฟอร์มคาสิโนออนไลน์ที่ยกระดับมาตรฐานการให้บริการสู่ระดับสากล
+                  รวบรวมเกมเดิมพันยอดนิยมไว้อย่างครบครัน ทั้งบาคาร่า สล็อต และกีฬา
+                  เพื่อตอบโจทย์ทุกสไตล์การเล่นในที่เดียว
+                </p>
+              </div>
+
+              <div className="grid gap-3 sm:grid-cols-2">
+                {platformSignals.map((signal) => (
+                  <div key={signal} className="premium-story-signal">
+                    <span className="h-1.5 w-1.5 rounded-full bg-accent-gold" />
+                    <span>{signal}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div
+                className="premium-story-quote relative overflow-hidden rounded-[28px] border border-accent-gold/14 px-5 py-5 sm:px-6 sm:py-6 lg:px-7 lg:py-7"
+                data-reveal
+                style={{ animationDelay: "120ms" }}
+              >
+                <div className="premium-story-card-beam absolute inset-0" aria-hidden="true" />
+                <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-accent-gold-light/60">
+                  Smooth Access
+                </p>
+                <p className="mt-3 font-display text-[clamp(1.45rem,2.7vw,2.35rem)] font-semibold leading-[1.12] text-[#fff1c7]">
+                  ใช้งานง่าย สะดวก รองรับทั้งเว็บไซต์และแอปพลิเคชัน เข้าถึงได้ทุกที่ทุกเวลา
+                </p>
+                <p className="mt-3 max-w-[35rem] text-sm leading-7 text-foreground/76 sm:text-[15px]">
+                  พร้อมระบบที่พัฒนาและอัปเดตอย่างต่อเนื่อง เพื่อให้การเดิมพันราบรื่น
+                  รวดเร็ว และมีประสิทธิภาพสูงสุด
+                </p>
+              </div>
+            </div>
+
+            <div className="premium-story-card-grid relative z-10 grid gap-4 sm:grid-cols-2 xl:gap-5">
+              {platformHighlights.map((item, index) => (
+                <article
+                  key={item.title}
+                  className={`premium-story-card group relative overflow-hidden rounded-[28px] border border-white/8 bg-gradient-to-br ${item.accent} p-5 shadow-[0_24px_60px_rgba(0,0,0,0.28)] sm:p-6 lg:p-7 ${
+                    index === 0 ? "sm:col-span-2" : ""
+                  }`}
+                  data-reveal
+                  style={{ animationDelay: `${160 + index * 90}ms` }}
+                >
+                  <div className="premium-story-card-beam absolute inset-0" aria-hidden="true" />
+
+                  <div className="flex items-start justify-between gap-3">
+                    <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-black/16 text-accent-gold-light shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
+                      <AppIcon name={item.icon} className="h-5.5 w-5.5" />
+                    </span>
+                    <span className="rounded-full border border-accent-gold/14 bg-black/16 px-3 py-1 text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-accent-gold-light/78">
+                      {item.eyebrow}
+                    </span>
+                  </div>
+
+                  <div className="mt-6 space-y-3">
+                    <h3 className="text-balance text-[clamp(1.16rem,1.9vw,1.95rem)] font-semibold leading-[1.14] text-white">
+                      {item.title}
+                    </h3>
+                    <p className="max-w-[32rem] text-[0.96rem] leading-7 text-foreground/80">
+                      {item.description}
+                    </p>
+                  </div>
+
+                  <div className="mt-6 inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-white/[0.045] px-3.5 py-2 text-[0.78rem] font-medium text-[#f6e0ab]">
+                    <span className="h-1.5 w-1.5 rounded-full bg-accent-gold" />
+                    <span>{item.note}</span>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div
+            className="premium-story-footnote relative z-10 mt-8 grid gap-5 border-t border-accent-gold/10 pt-6 lg:grid-cols-[minmax(0,1.15fr)_auto] lg:items-center"
+            data-reveal
+            style={{ animationDelay: "360ms" }}
+          >
+            <div className="space-y-2">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-accent-gold-light/56">
+                Stable Performance
+              </p>
+              <p className="font-display text-[clamp(1.3rem,2.1vw,1.9rem)] font-semibold leading-[1.13] text-white">
+                ด้วยระบบที่รองรับผู้ใช้งานจำนวนมาก ทำให้คุณสามารถเข้าเล่นได้อย่างเสถียร
+                ไม่สะดุด
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-3">
+              {platformTrustSignals.map((item) => (
+                <span key={item} className="premium-story-chip">
+                  {item}
+                </span>
+              ))}
             </div>
           </div>
         </div>
