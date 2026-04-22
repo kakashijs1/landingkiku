@@ -27,9 +27,9 @@ export default function TopHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-accent-gold/10 bg-[#100d11]/92 backdrop-blur-xl">
-      <div className="mx-auto max-w-[1400px] px-3 py-3 sm:px-6 sm:py-4 lg:px-8">
+      <div className="mx-auto max-w-[1400px] px-2.5 py-2.5 sm:px-6 sm:py-4 lg:px-8">
         <div className="lg:hidden">
-          <div className="relative overflow-hidden rounded-[30px] border border-white/8 bg-[linear-gradient(180deg,rgba(18,15,21,0.96),rgba(12,10,16,0.94))] shadow-[0_24px_70px_rgba(0,0,0,0.28)]">
+          <div className="relative overflow-hidden rounded-[26px] border border-white/8 bg-[linear-gradient(180deg,rgba(18,15,21,0.96),rgba(12,10,16,0.94))] shadow-[0_18px_48px_rgba(0,0,0,0.24)]">
             <Image
               src="/bgother/bg_header.6eb70f3d.jpg"
               alt=""
@@ -38,7 +38,7 @@ export default function TopHeader() {
               className="pointer-events-none object-cover opacity-70"
               sizes="100vw"
             />
-            <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-2 px-3 py-3">
+            <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-2 px-2 py-2">
               <HeaderLogo mobile />
               <button
                 type="button"
@@ -50,7 +50,7 @@ export default function TopHeader() {
                     : "ขยายส่วนหัวของหน้า"
                 }
                 onClick={() => setIsMobileExpanded((value) => !value)}
-                className={`inline-flex h-12 w-12 flex-none touch-manipulation cursor-pointer items-center justify-center rounded-full border text-accent-gold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold/70 ${
+                className={`inline-flex h-9 w-9 flex-none touch-manipulation cursor-pointer items-center justify-center rounded-full border text-accent-gold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold/70 ${
                   isMobileExpanded
                     ? "border-accent-gold/35 bg-accent-gold/10"
                     : "border-white/10 bg-white/5 hover:border-accent-gold/45"
@@ -58,7 +58,7 @@ export default function TopHeader() {
               >
                 <svg
                   viewBox="0 0 20 20"
-                  className={`h-5 w-5 transition-transform duration-200 ${
+                  className={`h-4 w-4 transition-transform duration-200 ${
                     isMobileExpanded ? "rotate-180" : ""
                   }`}
                   fill="none"
@@ -72,7 +72,7 @@ export default function TopHeader() {
               </button>
             </div>
 
-            <div className="border-t border-accent-gold/12 px-2 pb-2 pt-1">
+            <div className="border-t border-accent-gold/12 px-1.5 pb-1.5 pt-1.5">
               <HeaderNav mobile onNavigate={() => setIsMobileExpanded(false)} />
             </div>
 
@@ -118,24 +118,44 @@ export default function TopHeader() {
 }
 
 function HeaderLogo({ mobile = false }: { mobile?: boolean }) {
+  if (mobile) {
+    return (
+      <a
+        href="#top"
+        className="group flex min-w-0 items-center gap-2 rounded-[20px] border border-white/8 bg-white/4 px-2.5 py-1.5 transition-colors duration-200"
+      >
+        <div className="flex h-9 w-9 flex-none items-center justify-center rounded-full bg-[radial-gradient(circle_at_50%_30%,rgba(255,226,145,0.82),rgba(191,139,28,0.34)_58%,transparent_74%)]">
+          <AppIcon
+            name="crown"
+            className="h-6 w-6 text-accent-gold drop-shadow-[0_0_16px_rgba(212,175,55,0.55)]"
+          />
+        </div>
+
+        <div className="min-w-0">
+          <p className="truncate font-display text-[clamp(0.98rem,4.8vw,1.22rem)] font-semibold leading-none text-white transition-colors duration-200 group-hover:text-accent-gold-light">
+            คาสิโนออนไลน์
+          </p>
+        </div>
+      </a>
+    );
+  }
+
   return (
     <a
       href="#top"
       className={`group flex min-w-0 items-center transition-colors duration-200 ${
-        mobile
-          ? "gap-3 rounded-[24px] border border-white/8 bg-white/4 px-3 py-2.5"
-          : "gap-4 py-1"
+        mobile ? "gap-2.5 rounded-[22px] border border-white/8 bg-white/4 px-3 py-2" : "gap-4 py-1"
       }`}
     >
       <div
         className={`flex flex-none items-center justify-center rounded-full bg-[radial-gradient(circle_at_50%_30%,rgba(255,226,145,0.82),rgba(191,139,28,0.34)_58%,transparent_74%)] ${
-          mobile ? "h-12 w-12" : "h-16 w-16"
+          mobile ? "h-10 w-10" : "h-16 w-16"
         }`}
       >
         <AppIcon
           name="crown"
           className={`text-accent-gold drop-shadow-[0_0_16px_rgba(212,175,55,0.55)] ${
-            mobile ? "h-8 w-8" : "h-11 w-11"
+            mobile ? "h-6.5 w-6.5" : "h-11 w-11"
           }`}
         />
       </div>
@@ -144,7 +164,7 @@ function HeaderLogo({ mobile = false }: { mobile?: boolean }) {
         <p
           className={`truncate font-semibold uppercase text-foreground/56 ${
             mobile
-              ? "text-[10px] tracking-[0.26em]"
+              ? "text-[9px] tracking-[0.22em]"
               : "text-[12px] tracking-[0.34em]"
           }`}
         >
@@ -153,7 +173,7 @@ function HeaderLogo({ mobile = false }: { mobile?: boolean }) {
         <p
           className={`truncate font-display font-semibold leading-none transition-colors duration-200 group-hover:text-accent-gold-light ${
             mobile
-              ? "text-[clamp(1.35rem,6vw,1.8rem)] text-white"
+              ? "text-[clamp(1.05rem,5.4vw,1.45rem)] text-white"
               : "text-[2rem] text-[#f5d894]"
           }`}
         >
@@ -229,22 +249,22 @@ function HeaderNav({
         className="hide-scrollbar w-full min-w-0 overflow-x-auto"
         aria-label="เมนูหลัก"
       >
-        <ul className="flex min-w-max items-stretch gap-2 px-1 py-1">
+        <ul className="flex min-w-max items-center gap-1.5 px-0.5 py-0.5">
           {navItems.map((item, index) => (
             <li key={item.id}>
               <a
                 href={`#${item.id}`}
                 onClick={onNavigate}
-                className={`flex w-[5.1rem] cursor-pointer flex-col items-center justify-center gap-2 rounded-[22px] border px-3 py-3 text-center transition-all duration-200 ${
+                className={`inline-flex h-10 min-w-[4.5rem] cursor-pointer items-center justify-center gap-2 rounded-full border px-3 text-center transition-all duration-200 ${
                   index === 0
-                    ? "border-accent-gold/35 bg-[linear-gradient(180deg,rgba(212,175,55,0.14),rgba(212,175,55,0.04))] text-accent-gold-light"
-                    : "border-transparent bg-white/3 text-accent-gold/88 hover:border-accent-gold/18 hover:bg-accent-gold/8"
+                    ? "border-accent-gold/35 bg-[linear-gradient(180deg,rgba(212,175,55,0.16),rgba(212,175,55,0.05))] text-accent-gold-light shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]"
+                    : "border-white/6 bg-white/[0.025] text-accent-gold/88 hover:border-accent-gold/18 hover:bg-accent-gold/8"
                 }`}
               >
-                <span className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-current/18 bg-black/14">
-                  <AppIcon name={item.icon} className="h-5 w-5" />
+                <span className="inline-flex h-6.5 w-6.5 flex-none items-center justify-center rounded-full border border-current/16 bg-black/16">
+                  <AppIcon name={item.icon} className="h-3.5 w-3.5" />
                 </span>
-                <span className="text-[11px] font-semibold leading-tight">
+                <span className="whitespace-nowrap text-[10px] font-semibold leading-none">
                   {item.label}
                 </span>
               </a>

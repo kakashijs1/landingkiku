@@ -34,9 +34,9 @@ const heroSlides: HeroCarouselSlide[] = [
   {
     id: "hero-vip",
     badge: "themeKiku Lobby",
-    title: "แบนเนอร์หลักสำหรับภาพโปรโมชันแนวนอน",
+    title: "ประสบการณ์คาสิโนสดโทนพรีเมียมบนหน้าแรก",
     description:
-      "ใช้ภาพจริงแนวนอนจากโฟลเดอร์ banner โดยเก็บ text summary, ปุ่มเลื่อน และ indicator ไว้ด้านล่าง เพื่อไม่ให้ทับกับงานกราฟิกในภาพ",
+      "พบกับบรรยากาศหรูหรา โปรโมชั่นเด่น และจุดเริ่มต้นของการเล่นที่ออกแบบให้ดูชัดเต็มตาทั้งบนเดสก์ท็อปและมือถือ",
     imageSrc: "/banner/banner01.jpg",
     alt: "themeKiku banner 01",
     icon: "crown",
@@ -44,9 +44,9 @@ const heroSlides: HeroCarouselSlide[] = [
   {
     id: "hero-live",
     badge: "Premium Event",
-    title: "รองรับการใส่แบนเนอร์ event และโปรโมชั่น",
+    title: "อัปเดตกิจกรรมพิเศษและข้อเสนอใหม่ได้ตลอดเวลา",
     description:
-      "เหมาะกับรูปทรง 1920x450 แบบที่คุณใส่มาแล้ว และยังคงทำงานเป็น swiper ได้ทั้ง desktop และ mobile โดยเน้นภาพเต็มความกว้าง",
+      "นำเสนอแคมเปญและสิทธิพิเศษสำคัญด้วยภาพขนาดใหญ่เต็มความกว้าง พร้อมจังหวะการเลื่อนที่ลื่นไหลและอ่านง่ายทุกอุปกรณ์",
     imageSrc: "/banner/banner02.jpg",
     alt: "themeKiku banner 02",
     icon: "slot",
@@ -67,7 +67,7 @@ const gameLobbyItems: GameLobbyItem[] = [
   {
     id: "croupier-selection",
     title: "ดีลเลอร์บิคอน",
-    subtitle: "วางหมวดเกมสดหรือดีลเลอร์คู่เด่นให้ใกล้หน้าตาใน reference",
+    subtitle: "รวมดีลเลอร์คุณภาพและโต๊ะเด่นที่พร้อมให้เลือกเล่นได้ตลอดวัน",
     cue: "Live Croupier",
     icon: "live",
     accent: "from-[#4f3b1e]/94 via-[#171316]/92 to-[#100d11]/98",
@@ -77,7 +77,7 @@ const gameLobbyItems: GameLobbyItem[] = [
   {
     id: "baccarat-lobby",
     title: "บาคาร่ามาเก๊าถึง",
-    subtitle: "หมวดเด่นกึ่งกลางสำหรับเน้นเกมหลักตามจังหวะของ reference",
+    subtitle: "โซนบาคาร่าระดับพรีเมียมที่เน้นจังหวะเกมคมชัดและภาพลักษณ์น่าเชื่อถือ",
     cue: "Macau Baccarat",
     icon: "live",
     accent: "from-[#74521e]/94 via-[#181315]/92 to-[#100d11]/98",
@@ -283,7 +283,7 @@ function AboutSection() {
     <section id="about" className="px-4 pb-14 pt-10 sm:px-6 lg:px-8">
       <div className="section-surface about-section-shell mx-auto max-w-[1360px] overflow-hidden rounded-[34px] px-5 py-7 sm:px-8 sm:py-8 lg:px-9 lg:py-9">
         <div className="about-frame-shine absolute inset-0" aria-hidden="true" />
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,0.86fr)_minmax(560px,1.14fr)] lg:items-center">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,0.78fr)_minmax(620px,1.22fr)] lg:items-center">
           <div className="about-copy-shell relative z-10 space-y-5 lg:pr-4">
             <div className="flex flex-wrap items-center gap-3">
               <div className="about-pill">
@@ -308,17 +308,17 @@ function AboutSection() {
                 คือคาสิโนออนไลน์อันดับต้นของประเทศไทย
               </h2>
               <p className="max-w-[39rem] text-[15px] leading-8 text-foreground/74 sm:text-base">
-                เลย์เอาต์ส่วนนี้ถูกจัดให้ใกล้กับ reference มากขึ้น โดยฝั่งซ้ายเล่า
-                เรื่องแบรนด์แบบกระชับ ส่วนฝั่งขวาใช้ภาพ palace และ hostess จริงที่มีใน
-                โปรเจคเพื่อให้หน้าดูแน่นแบบคาสิโนพรีเมียม แต่ยังอ่านง่ายบนทุกขนาดจอ
+                themeKiku ถ่ายทอดภาพลักษณ์คาสิโนออนไลน์ระดับพรีเมียมด้วยบรรยากาศหรูหรา
+                เมนูชัดเจน และองค์ประกอบที่ช่วยให้ผู้เล่นมองเห็นจุดเด่นของเว็บได้ทันที
+                ไม่ว่าจะเข้าใช้งานจากหน้าจอขนาดเล็กหรือจอใหญ่ก็ยังคงดูสมดุลและอ่านง่าย
               </p>
             </div>
 
             <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium text-foreground/62">
               {[
-                "เลย์เอาต์ใกล้ภาพอ้างอิง",
-                "ใช้ asset จริงที่มีแล้ว",
-                "คุมโทนหรูบนทุกจอ",
+                "บรรยากาศหรูชัดเจน",
+                "เกมเด่นเข้าถึงง่าย",
+                "รองรับทุกอุปกรณ์",
               ].map((item) => (
                 <span key={item} className="inline-flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-accent-gold" />
@@ -335,17 +335,33 @@ function AboutSection() {
             </a>
           </div>
 
-          <div className="about-visual-cluster relative min-h-[20rem] sm:min-h-[24rem] lg:min-h-[26rem]">
+          <div className="about-visual-cluster relative -mx-4 mt-2 min-h-[22rem] sm:-mx-1 sm:min-h-[28rem] lg:mx-0 lg:min-h-[35rem]">
             <div className="about-visual-glow absolute inset-0" />
-            <div className="absolute inset-0 overflow-hidden rounded-[30px] border border-accent-gold/16 bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.01))] shadow-[0_24px_60px_rgba(0,0,0,0.28)]">
+            <div
+              className="about-stage-lines absolute inset-x-[-10%] bottom-[12%] top-[10%] z-0 opacity-65"
+              aria-hidden="true"
+            />
+
+            <div
+              className="about-base-panel absolute inset-x-[3%] bottom-[4%] z-0 h-[17%] rounded-full bg-[radial-gradient(circle_at_50%_50%,rgba(244,210,135,0.22),rgba(244,210,135,0.08)_34%,rgba(17,14,18,0)_72%),linear-gradient(90deg,rgba(17,14,18,0),rgba(17,14,18,0.42)_24%,rgba(17,14,18,0.42)_76%,rgba(17,14,18,0))]"
+              aria-hidden="true"
+            />
+
+            <div className="about-main-panel absolute inset-x-[-5%] bottom-[7%] top-[5%] z-10 overflow-hidden rounded-[30px] border border-accent-gold/16 bg-[linear-gradient(180deg,rgba(18,15,21,0.72),rgba(12,10,16,0.16)),radial-gradient(circle_at_78%_24%,rgba(244,210,135,0.18),transparent_24%)] shadow-[0_24px_60px_rgba(0,0,0,0.28)] sm:inset-x-[-1%] lg:inset-x-[1%] lg:bottom-[10%] lg:top-[4%]">
               <Image
                 src="/bgother/bg_homeWhy.a8b2d0a0.png"
                 alt="ภาพประกอบทำไมเลือกเรา"
                 fill
-                className="object-contain object-center"
-                sizes="(min-width: 1024px) 44vw, 92vw"
+                className="object-cover object-[76%_52%] scale-[2.08] sm:object-[74%_52%] sm:scale-[1.52] lg:object-[67%_53%] lg:scale-[1.16]"
+                sizes="(min-width: 1280px) 46rem, (min-width: 1024px) 42vw, (min-width: 640px) 92vw, 100vw"
               />
-              <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(11,9,13,0.08),rgba(11,9,13,0)_30%,rgba(11,9,13,0.16)_100%)]" />
+              <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(11,9,13,0.5),rgba(11,9,13,0.14)_26%,rgba(11,9,13,0.06)_58%,rgba(11,9,13,0.28)_100%)]" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_76%_18%,rgba(244,210,135,0.24),transparent_22%),radial-gradient(circle_at_38%_80%,rgba(244,210,135,0.12),transparent_18%)]" />
+            </div>
+
+            <div className="about-visual-caption absolute bottom-[7%] left-[7%] z-20 inline-flex min-h-10 items-center gap-2 rounded-full border border-accent-gold/18 bg-[linear-gradient(180deg,rgba(12,10,14,0.92),rgba(12,10,14,0.76))] px-3.5 py-2 text-[0.8rem] font-semibold text-[#f3d18d] shadow-[0_18px_32px_rgba(0,0,0,0.24)] sm:min-h-11 sm:px-4 sm:text-[0.84rem]">
+              <AppIcon name="crown" className="h-4.5 w-4.5 text-accent-gold" />
+              <span>คาสิโนพรีเมียม ครบทุกประสบการณ์</span>
             </div>
           </div>
         </div>
@@ -359,17 +375,17 @@ function ReasonsSection() {
     <section id="reasons" className="overflow-hidden pb-14 pt-10">
       <div className="relative bg-[linear-gradient(180deg,#111015,#0d0b10)]">
         <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-8">
-          <div className="relative px-2 pb-7 pt-6 text-center sm:px-4 lg:pb-9 lg:pt-8">
+          <div className="relative mx-auto max-w-[1180px] px-2 pb-8 pt-6 text-center sm:px-4 lg:pb-10 lg:pt-8">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,225,137,0.14),transparent_48%)]" />
-            <div className="relative flex flex-col items-center justify-center gap-2 sm:flex-row sm:gap-4">
-              <span className="text-[1.15rem] italic tracking-[0.34em] text-accent-gold-light/88 sm:text-[1.75rem]">
+            <div className="relative flex flex-wrap items-end justify-center gap-x-3 gap-y-1 sm:gap-x-5">
+              <span className="pb-2 text-[1.08rem] font-medium italic tracking-[0.3em] text-accent-gold-light/88 sm:text-[1.55rem]">
                 Top
               </span>
-              <span className="reason-top-number font-display text-[clamp(3.9rem,9vw,7rem)] font-semibold leading-none text-transparent">
+              <span className="reason-top-number font-display text-[clamp(4.5rem,10vw,8.4rem)] font-semibold leading-none text-transparent">
                 6
               </span>
-              <h2 className="text-balance text-[clamp(1.18rem,2.35vw,2.35rem)] font-semibold italic tracking-[0.06em] text-[#f3d18d]">
-                เหตุผลหลักที่ควรเลือก themeKiku Online
+              <h2 className="max-w-[16ch] text-balance text-[clamp(1.2rem,3vw,3rem)] font-medium italic leading-[1.04] tracking-[0.04em] text-[#f3d18d] sm:max-w-[22ch] lg:max-w-[26ch]">
+                เหตุผลหลักที่ควรเลือก <span className="whitespace-nowrap">themeKiku Online</span>
               </h2>
             </div>
           </div>
@@ -378,14 +394,14 @@ function ReasonsSection() {
         <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden border-y border-accent-gold/10 bg-[linear-gradient(180deg,rgba(28,23,18,0.36),rgba(14,12,16,0.94))]">
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-[linear-gradient(90deg,#0d0b10,transparent)] sm:w-24" />
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-[linear-gradient(270deg,#0d0b10,transparent)] sm:w-24" />
-          <div className="reasons-marquee-track flex w-max items-stretch">
+          <div className="reasons-marquee-track flex w-max items-stretch gap-3 px-4 py-4 sm:gap-5 sm:px-6 sm:py-5 lg:gap-6 lg:px-8">
             {[...reasons, ...reasons].map((reason, index) => (
               <article
                 key={`${reason.title}-${index}`}
-                className={`reason-strip-card group relative min-h-[12rem] w-[min(74vw,19rem)] flex-none overflow-hidden bg-gradient-to-br ${reason.accent} sm:w-[min(54vw,19.5rem)] lg:w-[min(19vw,21rem)] xl:w-[min(18vw,22rem)]`}
+                className={`reason-strip-card group relative min-h-[14.5rem] w-[min(82vw,22rem)] flex-none overflow-hidden bg-gradient-to-br ${reason.accent} sm:min-h-[15.75rem] sm:w-[min(58vw,24rem)] lg:min-h-[17.5rem] lg:w-[min(28vw,28rem)] xl:w-[min(25vw,29rem)]`}
                 style={{
                   clipPath:
-                    "polygon(30px 0, 100% 0, calc(100% - 30px) 100%, 0 100%)",
+                    "polygon(34px 0, 100% 0, calc(100% - 34px) 100%, 0 100%)",
                 }}
               >
                 <Image
@@ -394,24 +410,61 @@ function ReasonsSection() {
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   style={{ objectPosition: reason.imagePosition ?? "center" }}
-                  sizes="(min-width: 1280px) 21rem, (min-width: 640px) 19rem, 74vw"
+                  sizes="(min-width: 1280px) 29rem, (min-width: 1024px) 28vw, (min-width: 640px) 24rem, 82vw"
                 />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,7,10,0.06),rgba(8,7,10,0.26)_100%)]" />
-                <div className="absolute inset-y-0 left-0 w-[68%] bg-[linear-gradient(90deg,rgba(9,8,11,0.86),rgba(9,8,11,0.58)_48%,rgba(9,8,11,0.12)_82%,transparent)]" />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,7,10,0.05),rgba(8,7,10,0.24)_100%)]" />
+                <div className="absolute inset-y-0 left-0 w-[74%] bg-[linear-gradient(90deg,rgba(9,8,11,0.9),rgba(9,8,11,0.62)_44%,rgba(9,8,11,0.14)_84%,transparent)]" />
 
-                <div className="absolute inset-0 z-10 flex items-start p-4 sm:p-5">
-                  <div className="max-w-[10rem] space-y-2 sm:max-w-[11rem]">
-                    <h3 className="text-balance text-[clamp(0.98rem,1.05vw,1.52rem)] font-semibold leading-[1.08] text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.5)]">
-                      {reason.title}
-                    </h3>
-                    <div className="inline-flex items-start gap-1.5 text-[0.8rem] italic leading-[1.16] text-[#ebcf92] sm:text-[0.9rem]">
-                      <span className="mt-[0.12rem] inline-flex h-4.5 w-4.5 items-center justify-center rounded-full border border-accent-gold/32 bg-black/18 text-[0.58rem] not-italic text-[#ebcf92]">
-                        &gt;
-                      </span>
-                      <span className="text-balance drop-shadow-[0_3px_12px_rgba(0,0,0,0.45)]">
-                        {reason.eyebrow}
-                      </span>
-                    </div>
+                <div className="reason-strip-copy absolute left-3 top-3 z-10 w-[min(75%,16.5rem)] rounded-[1.15rem] border border-white/8 bg-[linear-gradient(180deg,rgba(18,15,21,0.9),rgba(11,9,13,0.66))] px-3.5 py-3 shadow-[0_18px_34px_rgba(0,0,0,0.24)] backdrop-blur-[3px] sm:left-4 sm:top-4 sm:w-[min(73%,17rem)] sm:px-4 sm:py-3.5 lg:w-[min(68%,18rem)]">
+                  <h3
+                    className="text-[clamp(1rem,1.2vw,1.58rem)] font-semibold leading-[1.08] text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.5)]"
+                    style={{
+                      display: "-webkit-box",
+                      WebkitBoxOrient: "vertical",
+                      WebkitLineClamp: 2,
+                      overflow: "hidden",
+                      overflowWrap: "anywhere",
+                    }}
+                  >
+                    {reason.title}
+                  </h3>
+                  <div className="mt-3 inline-flex max-w-full items-start gap-2 text-[#ebcf92]">
+                    <span className="mt-[0.08rem] inline-flex h-5 w-5 flex-none items-center justify-center rounded-full border border-accent-gold/30 bg-black/24 text-[0.64rem] not-italic text-[#ebcf92] sm:h-5.5 sm:w-5.5">
+                      &gt;
+                    </span>
+                    <span
+                      className="text-[0.92rem] italic leading-[1.15] sm:text-[1rem]"
+                      style={{
+                        display: "-webkit-box",
+                        WebkitBoxOrient: "vertical",
+                        WebkitLineClamp: 2,
+                        overflow: "hidden",
+                        overflowWrap: "anywhere",
+                      }}
+                    >
+                      {reason.eyebrow}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="absolute inset-x-0 bottom-0 top-[38%] z-10" aria-hidden="true">
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(9,8,11,0),rgba(9,8,11,0.08)_24%,rgba(9,8,11,0.18)_100%)]" />
+                </div>
+
+                <div className="absolute inset-x-0 bottom-0 top-[44%] z-10 flex items-end p-4 sm:p-5">
+                  <div className="max-w-[14rem] opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <p
+                      className="text-[0.9rem] leading-[1.28] text-foreground/80 sm:text-[0.96rem]"
+                      style={{
+                        display: "-webkit-box",
+                        WebkitBoxOrient: "vertical",
+                        WebkitLineClamp: 3,
+                        overflow: "hidden",
+                        overflowWrap: "anywhere",
+                      }}
+                    >
+                      {reason.description}
+                    </p>
                   </div>
                 </div>
               </article>
@@ -428,89 +481,92 @@ function SiteFooter() {
     <footer className="relative z-10 mt-8 overflow-hidden border-t border-accent-gold/10 bg-[#0c0a0f]">
       <div className="footer-lounge-backdrop absolute inset-0" />
       <Image
-        src="/bgother/bg_footer.ef483996.jpg"
+        src="/bgother/bgFooter.jpg"
         alt=""
         fill
         aria-hidden="true"
-        className="pointer-events-none object-cover opacity-[0.34]"
+        className="pointer-events-none object-cover object-center opacity-[0.72] saturate-[1.05]"
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,9,13,0.92),rgba(11,9,13,0.84)_28%,rgba(11,9,13,0.9))]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,9,13,0.52),rgba(11,9,13,0.18)_20%,rgba(11,9,13,0.42)_54%,rgba(11,9,13,0.66)_100%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,rgba(244,210,135,0.16),transparent_30%),radial-gradient(circle_at_18%_76%,rgba(244,210,135,0.08),transparent_22%),radial-gradient(circle_at_82%_78%,rgba(244,210,135,0.08),transparent_22%)] opacity-90 blur-[2px]" />
 
       <div className="relative mx-auto max-w-[1400px] px-4 pt-12 sm:px-6 lg:px-8">
-        <div className="grid gap-10 border-b border-accent-gold/10 pb-10 lg:grid-cols-[minmax(0,1.2fr)_repeat(3,minmax(0,0.55fr))]">
-          <div className="space-y-6">
-            <div className="flex flex-wrap items-center gap-4">
-              <div className="inline-flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-full bg-[radial-gradient(circle_at_50%_30%,rgba(255,226,145,0.88),rgba(191,139,28,0.38)_58%,transparent_74%)]">
-                <AppIcon name="crown" className="h-11 w-11 text-accent-gold" />
+        <div className="rounded-[32px] border border-white/6 bg-[linear-gradient(180deg,rgba(11,9,13,0.34),rgba(11,9,13,0.1)_22%,rgba(11,9,13,0.24)_100%)] px-5 py-6 shadow-[0_24px_60px_rgba(0,0,0,0.18)] backdrop-blur-[4px] sm:px-6 sm:py-7 lg:px-8 lg:py-8">
+          <div className="grid gap-10 border-b border-accent-gold/10 pb-10 lg:grid-cols-[minmax(0,1.2fr)_repeat(3,minmax(0,0.55fr))]">
+            <div className="space-y-6">
+              <div className="flex flex-wrap items-center gap-4">
+                <div className="inline-flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-full bg-[radial-gradient(circle_at_50%_30%,rgba(255,226,145,0.88),rgba(191,139,28,0.38)_58%,transparent_74%)]">
+                  <AppIcon name="crown" className="h-11 w-11 text-accent-gold" />
+                </div>
+                <div className="space-y-1">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-foreground/54">
+                    themeKiku คาสิโน ออนไลน์
+                  </p>
+                  <p className="font-display text-3xl font-semibold text-[#f3d18d]">
+                    themeKiku Online
+                  </p>
+                </div>
               </div>
-              <div className="space-y-1">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-foreground/54">
-                  themeKiku คาสิโน ออนไลน์
-                </p>
-                <p className="font-display text-3xl font-semibold text-[#f3d18d]">
-                  themeKiku Online
-                </p>
-              </div>
-            </div>
 
-            <div className="flex flex-wrap items-center gap-3 text-accent-gold-light">
-              {["G Club", "18+", "Gaming Lab", "Secure Payment"].map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-accent-gold/16 bg-black/18 px-3 py-1.5 text-sm font-semibold"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-
-            <p className="max-w-[44rem] text-sm leading-8 text-foreground/76">
-              ไม่ต้องสงสัยเลยว่า themeKiku คือคาสิโนออนไลน์โทนพรีเมียมที่ออกแบบมาให้
-              ใช้งานง่ายบนทุกอุปกรณ์ พร้อมเมนูหลักชัดเจน, จุดสื่อสารแบรนด์เด่น,
-              และโครงสร้าง section ที่รองรับการแทนภาพจริงได้ทันทีในรอบถัดไป
-            </p>
-
-            <div className="flex flex-wrap items-center gap-4 pt-1">
-              {footerSocials.map((item) => (
-                <button
-                  key={item.label}
-                  type="button"
-                  aria-label={item.label}
-                  className="inline-flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border border-accent-gold/18 bg-[linear-gradient(180deg,rgba(244,210,135,0.96),rgba(198,144,48,0.96))] text-[#20160b] transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold/70"
-                >
-                  <AppIcon name={item.icon} className="h-5 w-5" />
-                </button>
-              ))}
-
-              <a
-                href="#top"
-                className="footer-action-button inline-flex min-h-12 items-center justify-center px-8 text-sm font-semibold text-[#20160b] transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold/70"
-              >
-                เรียนรู้เพิ่มเติม
-              </a>
-            </div>
-          </div>
-
-          {footerColumns.map((column) => (
-            <div key={column.title} className="space-y-5 text-center lg:text-left">
-              <h3 className="text-lg font-semibold text-[#f3d18d]">
-                {column.title}
-              </h3>
-              <ul className="space-y-3">
-                {column.links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#top"
-                      className="text-base text-foreground/72 transition-colors duration-200 hover:text-white"
-                    >
-                      {link}
-                    </a>
-                  </li>
+              <div className="flex flex-wrap items-center gap-3 text-accent-gold-light">
+                {["G Club", "18+", "Gaming Lab", "Secure Payment"].map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-accent-gold/16 bg-black/18 px-3 py-1.5 text-sm font-semibold"
+                  >
+                    {item}
+                  </span>
                 ))}
-              </ul>
+              </div>
+
+              <p className="max-w-[44rem] text-sm leading-8 text-foreground/76">
+                ไม่ต้องสงสัยเลยว่า themeKiku คือคาสิโนออนไลน์โทนพรีเมียมที่ออกแบบมาให้
+                ใช้งานง่ายบนทุกอุปกรณ์ พร้อมเมนูหลักชัดเจน, จุดสื่อสารแบรนด์เด่น
+                และบริการที่ช่วยให้ผู้เล่นเข้าถึงเกมโปรดและช่องทางช่วยเหลือได้อย่างรวดเร็ว
+              </p>
+
+              <div className="flex flex-wrap items-center gap-4 pt-1">
+                {footerSocials.map((item) => (
+                  <button
+                    key={item.label}
+                    type="button"
+                    aria-label={item.label}
+                    className="inline-flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border border-accent-gold/18 bg-[linear-gradient(180deg,rgba(244,210,135,0.96),rgba(198,144,48,0.96))] text-[#20160b] transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold/70"
+                  >
+                    <AppIcon name={item.icon} className="h-5 w-5" />
+                  </button>
+                ))}
+
+                <a
+                  href="#top"
+                  className="footer-action-button inline-flex min-h-12 items-center justify-center px-8 text-sm font-semibold text-[#20160b] transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold/70"
+                >
+                  เรียนรู้เพิ่มเติม
+                </a>
+              </div>
             </div>
-          ))}
+
+            {footerColumns.map((column) => (
+              <div key={column.title} className="space-y-5 text-center lg:text-left">
+                <h3 className="text-lg font-semibold text-[#f3d18d]">
+                  {column.title}
+                </h3>
+                <ul className="space-y-3">
+                  {column.links.map((link) => (
+                    <li key={link}>
+                      <a
+                        href="#top"
+                        className="text-base text-foreground/72 transition-colors duration-200 hover:text-white"
+                      >
+                        {link}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="flex flex-col gap-3 py-6 text-center text-xs text-foreground/46">
