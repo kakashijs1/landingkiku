@@ -3,6 +3,8 @@
 import Image from "next/image";
 import {
   startTransition,
+  useEffect,
+  useEffectEvent,
   useRef,
   useState,
   type CSSProperties,
@@ -88,9 +90,10 @@ export default function GameLobbyCarousel({
 }: {
   items: GameLobbyItem[];
 }) {
-  const [activeIndex, setActiveIndex] = useState(Math.min(2, items.length - 1));
+  const [activeIndex, setActiveIndex] = useState(Math.max(0, Math.min(2, items.length - 1)));
   const swipeStartX = useRef<number | null>(null);
   const swipeTriggered = useRef(false);
+  const isPointerActive = useRef(false);
 
   const setActive = (nextIndex: number) => {
     startTransition(() => {
@@ -98,22 +101,51 @@ export default function GameLobbyCarousel({
     });
   };
 
+  const advanceSlide = useEffectEvent(() => {
+    startTransition(() => {
+      setActiveIndex((currentIndex) => normalizeIndex(currentIndex + 1, items.length));
+    });
+  });
+
+  useEffect(() => {
+    if (items.length < 2) {
+      return;
+    }
+
+    const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    const autoplayInterval = window.setInterval(() => {
+      if (document.hidden || reducedMotionQuery.matches || isPointerActive.current) {
+        return;
+      }
+
+      advanceSlide();
+    }, 4200);
+
+    return () => {
+      window.clearInterval(autoplayInterval);
+    };
+  }, [items.length]);
+
   const handlePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
     if (event.pointerType === "mouse" && event.button !== 0) {
       return;
     }
 
+    isPointerActive.current = true;
     swipeStartX.current = event.clientX;
     swipeTriggered.current = false;
   };
 
   const handlePointerEnd = (clientX: number) => {
     if (swipeStartX.current === null) {
+      isPointerActive.current = false;
       return;
     }
 
     const delta = clientX - swipeStartX.current;
     swipeStartX.current = null;
+    isPointerActive.current = false;
 
     if (Math.abs(delta) < 44) {
       return;
@@ -181,6 +213,7 @@ export default function GameLobbyCarousel({
         onPointerDown={handlePointerDown}
         onPointerUp={(event) => handlePointerEnd(event.clientX)}
         onPointerCancel={() => {
+          isPointerActive.current = false;
           swipeStartX.current = null;
           swipeTriggered.current = false;
         }}
