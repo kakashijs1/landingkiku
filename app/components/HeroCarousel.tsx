@@ -110,10 +110,10 @@ export default function HeroCarousel({
                   className="object-cover object-center"
                   sizes="(min-width: 1280px) 1500px, 100vw"
                 />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.08),rgba(0,0,0,0.28)_72%,rgba(0,0,0,0.6)_100%)]" />
-                <div className="absolute inset-y-0 left-0 w-[17%] bg-[linear-gradient(90deg,rgba(9,8,11,0.88),rgba(9,8,11,0.22))]" style={{ clipPath: "polygon(0 0, 72% 0, 100% 100%, 0 100%)" }} />
-                <div className="absolute inset-y-0 right-0 w-[17%] bg-[linear-gradient(270deg,rgba(9,8,11,0.88),rgba(9,8,11,0.22))]" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 28% 100%)" }} />
-                <div className="absolute inset-x-[20%] top-0 h-[24%] bg-[radial-gradient(circle_at_50%_0%,rgba(255,226,145,0.16),transparent_72%)]" />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.1),rgba(0,0,0,0.24)_68%,rgba(0,0,0,0.52)_100%)] sm:bg-[linear-gradient(180deg,rgba(0,0,0,0.08),rgba(0,0,0,0.28)_72%,rgba(0,0,0,0.6)_100%)]" />
+                <div className="absolute inset-y-0 left-0 hidden w-[17%] bg-[linear-gradient(90deg,rgba(9,8,11,0.88),rgba(9,8,11,0.22))] sm:block" style={{ clipPath: "polygon(0 0, 72% 0, 100% 100%, 0 100%)" }} />
+                <div className="absolute inset-y-0 right-0 hidden w-[17%] bg-[linear-gradient(270deg,rgba(9,8,11,0.88),rgba(9,8,11,0.22))] sm:block" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 28% 100%)" }} />
+                <div className="absolute inset-x-[16%] top-0 h-[20%] bg-[radial-gradient(circle_at_50%_0%,rgba(255,226,145,0.15),transparent_74%)] sm:inset-x-[20%] sm:h-[24%]" />
               </div>
             </article>
           ))}

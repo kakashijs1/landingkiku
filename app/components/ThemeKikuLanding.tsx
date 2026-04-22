@@ -234,19 +234,19 @@ function HeroSection() {
   return (
     <section
       id="top"
-      className="relative px-4 pb-20 pt-4 sm:px-6 sm:pb-24 lg:px-8 lg:pb-28"
+      className="relative overflow-x-clip pb-[7.4rem] pt-2 sm:px-6 sm:pb-24 sm:pt-4 lg:px-8 lg:pb-28"
     >
-      <div className="mx-auto max-w-[1500px]">
-        <div className="relative overflow-visible pb-[12.9rem] sm:pb-[12.8rem] lg:pb-[14.2rem]">
+      <div className="sm:mx-auto sm:max-w-[1500px]">
+        <div className="relative overflow-visible pb-[8.1rem] sm:pb-[12.8rem] lg:pb-[14.2rem]">
           <div
-            className="absolute inset-0 rounded-[36px] bg-[linear-gradient(180deg,rgba(17,14,20,0.86),rgba(10,9,13,0.92)),repeating-linear-gradient(90deg,rgba(255,216,138,0.06)_0_4px,transparent_4px_126px,rgba(255,216,138,0.05)_126px_128px,transparent_128px_248px)]"
+            className="absolute inset-0 hidden rounded-[36px] bg-[linear-gradient(180deg,rgba(17,14,20,0.86),rgba(10,9,13,0.92)),repeating-linear-gradient(90deg,rgba(255,216,138,0.06)_0_4px,transparent_4px_126px,rgba(255,216,138,0.05)_126px_128px,transparent_128px_248px)] sm:block"
             aria-hidden="true"
           />
           <div
-            className="absolute inset-0 rounded-[36px] bg-[radial-gradient(circle_at_50%_0%,rgba(255,226,145,0.18),transparent_28%),linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0))]"
+            className="absolute inset-0 hidden rounded-[36px] bg-[radial-gradient(circle_at_50%_0%,rgba(255,226,145,0.18),transparent_28%),linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0))] sm:block"
             aria-hidden="true"
           />
-          <div className="absolute inset-0 z-20 pointer-events-none" aria-hidden="true">
+          <div className="absolute inset-0 z-20 hidden pointer-events-none sm:block" aria-hidden="true">
             <Image
               src="/mask/obj_mask.96351921.png"
               alt=""
@@ -266,7 +266,7 @@ function HeroSection() {
           </div>
 
           <div
-            className="absolute inset-x-0 -bottom-8 z-30 px-3 sm:-bottom-5 sm:px-6 lg:-bottom-6 lg:px-8"
+            className="absolute inset-x-0 -bottom-[4.5rem] z-30 px-2 sm:-bottom-5 sm:px-6 lg:-bottom-6 lg:px-8"
             data-reveal
             style={{ animationDelay: "200ms" }}
           >
@@ -280,7 +280,7 @@ function HeroSection() {
 
 function AboutSection() {
   return (
-    <section id="about" className="px-4 pb-14 pt-10 sm:px-6 lg:px-8">
+    <section id="about" className="px-4 pb-14 pt-4 sm:px-6 sm:pt-10 lg:px-8">
       <div className="section-surface about-section-shell mx-auto max-w-[1360px] overflow-hidden rounded-[34px] px-5 py-7 sm:px-8 sm:py-8 lg:px-9 lg:py-9">
         <div className="about-frame-shine absolute inset-0" aria-hidden="true" />
         <div className="grid gap-8 lg:grid-cols-[minmax(0,0.78fr)_minmax(620px,1.22fr)] lg:items-center">
