@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { startTransition, useState } from "react";
+import { startTransition, useEffect, useState } from "react";
 import { type IconName } from "./AppIcon";
 
 export type HeroCarouselSlide = {
@@ -20,6 +20,7 @@ export default function HeroCarousel({
   slides: HeroCarouselSlide[];
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isMobileAutoplayEnabled, setIsMobileAutoplayEnabled] = useState(false);
 
   const goToSlide = (nextIndex: number) => {
     const slideCount = slides.length;
@@ -29,6 +30,67 @@ export default function HeroCarousel({
       setActiveIndex(normalizedIndex);
     });
   };
+
+  useEffect(() => {
+    if (slides.length < 2) {
+      return;
+    }
+
+    const mobileQuery = window.matchMedia("(max-width: 767px)");
+    const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    const syncAutoplayState = () => {
+      setIsMobileAutoplayEnabled(
+        mobileQuery.matches && !reducedMotionQuery.matches,
+      );
+    };
+
+    const addQueryListener = (
+      query: MediaQueryList,
+      handler: () => void,
+    ) => {
+      if (typeof query.addEventListener === "function") {
+        query.addEventListener("change", handler);
+        return () => query.removeEventListener("change", handler);
+      }
+
+      query.addListener(handler);
+      return () => query.removeListener(handler);
+    };
+
+    syncAutoplayState();
+
+    const removeMobileListener = addQueryListener(mobileQuery, syncAutoplayState);
+    const removeReducedMotionListener = addQueryListener(
+      reducedMotionQuery,
+      syncAutoplayState,
+    );
+
+    return () => {
+      removeMobileListener();
+      removeReducedMotionListener();
+    };
+  }, [slides.length]);
+
+  useEffect(() => {
+    if (!isMobileAutoplayEnabled || slides.length < 2) {
+      return;
+    }
+
+    const autoplayInterval = window.setInterval(() => {
+      if (document.hidden) {
+        return;
+      }
+
+      startTransition(() => {
+        setActiveIndex((currentIndex) => (currentIndex + 1) % slides.length);
+      });
+    }, 4600);
+
+    return () => {
+      window.clearInterval(autoplayInterval);
+    };
+  }, [isMobileAutoplayEnabled, slides.length]);
 
   return (
     <section className="relative" aria-label="ภาพสไลด์โปรโมชัน">
@@ -57,64 +119,68 @@ export default function HeroCarousel({
           ))}
         </div>
 
-        <div className="absolute inset-y-0 left-0 right-0 z-20 flex items-center justify-between px-2 sm:px-4 lg:px-6">
-          <button
-            type="button"
-            aria-label="สไลด์ก่อนหน้า"
-            onClick={() => goToSlide(activeIndex - 1)}
-            className="inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-black/36 text-accent-gold transition-colors duration-200 hover:border-accent-gold/32 hover:text-accent-gold-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold/70"
-          >
-            <svg
-              viewBox="0 0 20 20"
-              className="h-4 w-4"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.8"
-            >
-              <path d="m12.5 4.5-5 5 5 5" />
-            </svg>
-          </button>
-
-          <button
-            type="button"
-            aria-label="สไลด์ถัดไป"
-            onClick={() => goToSlide(activeIndex + 1)}
-            className="inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-accent-gold/26 bg-accent-gold/12 text-accent-gold transition-colors duration-200 hover:border-accent-gold/42 hover:text-accent-gold-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold/70"
-          >
-            <svg
-              viewBox="0 0 20 20"
-              className="h-4 w-4"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.8"
-            >
-              <path d="m7.5 4.5 5 5-5 5" />
-            </svg>
-          </button>
-        </div>
-
-        <div className="absolute inset-x-0 bottom-4 z-20 flex justify-center px-4 sm:bottom-5">
-          <div className="flex items-center gap-2">
-            {slides.map((slide, index) => (
+        {slides.length > 1 ? (
+          <>
+            <div className="absolute inset-y-0 left-0 right-0 z-20 flex items-center justify-between px-2 sm:px-4 lg:px-6">
               <button
-                key={slide.id}
                 type="button"
-                aria-label={`ไปยังสไลด์ ${index + 1}`}
-                aria-pressed={activeIndex === index}
-                onClick={() => goToSlide(index)}
-                className={`h-2.5 cursor-pointer rounded-full transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold/70 ${
-                  activeIndex === index
-                    ? "w-10 bg-accent-gold"
-                    : "w-2.5 bg-white/22 hover:bg-white/40"
-                }`}
-              />
-            ))}
-          </div>
-        </div>
+                aria-label="สไลด์ก่อนหน้า"
+                onClick={() => goToSlide(activeIndex - 1)}
+                className="inline-flex h-9 w-9 touch-manipulation cursor-pointer items-center justify-center rounded-full border border-white/10 bg-black/36 text-accent-gold transition-colors duration-200 hover:border-accent-gold/32 hover:text-accent-gold-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold/70 sm:h-11 sm:w-11"
+              >
+                <svg
+                  viewBox="0 0 20 20"
+                  className="h-4 w-4"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.8"
+                >
+                  <path d="m12.5 4.5-5 5 5 5" />
+                </svg>
+              </button>
+
+              <button
+                type="button"
+                aria-label="สไลด์ถัดไป"
+                onClick={() => goToSlide(activeIndex + 1)}
+                className="inline-flex h-9 w-9 touch-manipulation cursor-pointer items-center justify-center rounded-full border border-accent-gold/26 bg-accent-gold/12 text-accent-gold transition-colors duration-200 hover:border-accent-gold/42 hover:text-accent-gold-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold/70 sm:h-11 sm:w-11"
+              >
+                <svg
+                  viewBox="0 0 20 20"
+                  className="h-4 w-4"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.8"
+                >
+                  <path d="m7.5 4.5 5 5-5 5" />
+                </svg>
+              </button>
+            </div>
+
+            <div className="absolute inset-x-0 bottom-3 z-20 flex justify-center px-4 sm:bottom-5">
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                {slides.map((slide, index) => (
+                  <button
+                    key={slide.id}
+                    type="button"
+                    aria-label={`ไปยังสไลด์ ${index + 1}`}
+                    aria-pressed={activeIndex === index}
+                    onClick={() => goToSlide(index)}
+                    className={`h-2.5 cursor-pointer rounded-full transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold/70 ${
+                      activeIndex === index
+                        ? "w-8 bg-accent-gold sm:w-10"
+                        : "w-2.5 bg-white/22 hover:bg-white/40"
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+          </>
+        ) : null}
       </div>
     </section>
   );

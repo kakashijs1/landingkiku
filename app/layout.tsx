@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://themekiku.example"),
   title: "themeKiku | คาสิโนสดอันดับหนึ่งในเอเชียน",
   description:
-    "Landing page โทน luxury gaming แบบ responsive สร้างด้วย Next.js 16, TypeScript และ Tailwind CSS v4",
+    "Landing page โทน luxury gaming แบบ ",
   openGraph: {
     title: "themeKiku Online",
     description:

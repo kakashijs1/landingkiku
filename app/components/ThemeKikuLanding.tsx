@@ -234,10 +234,10 @@ function HeroSection() {
   return (
     <section
       id="top"
-      className="relative px-4 pb-16 pt-4 sm:px-6 sm:pb-24 lg:px-8 lg:pb-28"
+      className="relative px-4 pb-20 pt-4 sm:px-6 sm:pb-24 lg:px-8 lg:pb-28"
     >
       <div className="mx-auto max-w-[1500px]">
-        <div className="relative overflow-visible pb-[10.4rem] sm:pb-[12.2rem] lg:pb-[14.2rem]">
+        <div className="relative overflow-visible pb-[12.9rem] sm:pb-[12.8rem] lg:pb-[14.2rem]">
           <div
             className="absolute inset-0 rounded-[36px] bg-[linear-gradient(180deg,rgba(17,14,20,0.86),rgba(10,9,13,0.92)),repeating-linear-gradient(90deg,rgba(255,216,138,0.06)_0_4px,transparent_4px_126px,rgba(255,216,138,0.05)_126px_128px,transparent_128px_248px)]"
             aria-hidden="true"
@@ -266,7 +266,7 @@ function HeroSection() {
           </div>
 
           <div
-            className="absolute inset-x-0 -bottom-3 z-30 px-3 sm:-bottom-4 sm:px-6 lg:-bottom-6 lg:px-8"
+            className="absolute inset-x-0 -bottom-8 z-30 px-3 sm:-bottom-5 sm:px-6 lg:-bottom-6 lg:px-8"
             data-reveal
             style={{ animationDelay: "200ms" }}
           >
